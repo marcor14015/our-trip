@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 Days in South Florida</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0D0B09;--bg2:#131109;--bg3:#1A1710;--card:#1E1B14;--border:#302C20;--gold:#C49A50;--gold-lt:#E8D5A8;--cream:#F0EAE0;--muted:#7A7060;--text:#DDD8CE}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-weight:300;line-height:1.6}
+
+.cover{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;overflow:hidden}
+.cover-bg{position:absolute;inset:0;background-size:cover;background-position:center 40%}
+.cover-bg::after{content:'';position:absolute;inset:0;background:rgba(8,6,3,.72)}
+.cover-inner{position:relative;z-index:1;max-width:700px}
+.cover-eye{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-lt);font-weight:400;margin-bottom:28px;display:block}
+.cover-title{font-family:'Cormorant Garamond',serif;font-size:clamp(60px,10vw,100px);font-weight:300;color:var(--cream);line-height:.9;margin-bottom:28px;letter-spacing:-2px}
+.cover-title em{font-style:italic;color:var(--gold-lt)}
+.cover-rule{width:48px;height:1px;background:var(--gold);margin:0 auto 28px}
+.cover-tagline{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;font-weight:300;color:rgba(240,234,224,.5);margin-bottom:64px}
+.cover-stats{display:flex;justify-content:center}
+.cover-stat{padding:0 36px;border-right:1px solid rgba(196,154,80,.2)}
+.cover-stat:last-child{border-right:none}
+.cover-stat-num{display:block;font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--gold-lt);line-height:1}
+.cover-stat-lbl{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,234,224,.35);margin-top:6px}
+
+.page{max-width:980px;margin:0 auto;padding:88px 48px 0}
+
+.sec-head{padding-left:18px;border-left:3px solid var(--gold);margin-bottom:64px}
+.sec-eye{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:10px;display:block}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:var(--cream);line-height:1.05;margin-bottom:10px}
+.sec-sub{font-size:14px;color:var(--muted);line-height:1.7;max-width:460px}
+
+.destination-block{margin-bottom:96px}
+.dest-hero{position:relative;overflow:hidden;height:400px;background:var(--bg3)}
+.dest-hero img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.dest-hero:hover img{transform:scale(1.03)}
+.dest-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,3,.90) 0%,rgba(8,6,3,.15) 45%,transparent 100%);display:flex;align-items:flex-end;padding:28px 32px}
+.dest-name{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--cream);line-height:1}
+.dest-body{padding-top:28px}
+
+.cat{margin-bottom:28px}
+.cat-lbl{font-size:9px;letter-spacing:.36em;text-transform:uppercase;font-weight:500;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.cat-lbl::after{content:'';flex:1;height:.5px;background:var(--border)}
+
+.place-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.place-card{background:var(--card);border:.5px solid var(--border);overflow:hidden;transition:border-color .2s,transform .2s;display:block;text-decoration:none;color:inherit}
+.place-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.place-card-img{width:100%;height:130px;object-fit:cover;display:block;background:var(--bg3)}
+.place-card-name{padding:9px 11px 11px;font-size:12.5px;font-weight:400;color:var(--cream);line-height:1.35;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.link-icon{opacity:0;font-size:10px;color:var(--gold);transition:opacity .2s;flex-shrink:0}
+.place-card:hover .link-icon,.aft-card:hover .link-icon{opacity:1}
+
+.divider{display:flex;align-items:center;gap:16px;margin:80px 0 64px}
+.divider::before,.divider::after{content:'';flex:1;height:.5px;background:var(--border)}
+.divider span{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
+
+.afternoon-group{margin-bottom:28px}
+.aft-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.aft-card{background:var(--card);border:.5px solid var(--border);overflow:hidden;transition:border-color .2s,transform .2s;display:block;text-decoration:none;color:inherit}
+.aft-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.aft-card-img{width:100%;height:120px;object-fit:cover;display:block;background:var(--bg3)}
+.aft-card-body{padding:9px 11px 12px}
+.aft-cat{font-size:8px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--gold);margin-bottom:3px;display:block}
+.aft-name{font-size:12.5px;font-weight:400;color:var(--cream);line-height:1.35;display:flex;align-items:center;justify-content:space-between;gap:6px}
+
+.footer{margin-top:88px;background:var(--bg2);text-align:center;padding:64px 40px;border-top:1px solid var(--border)}
+.footer-main{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;font-weight:300;color:var(--gold-lt);margin-bottom:12px}
+.footer-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(240,234,224,.2)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* skeleton shimmer while images load */
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+.img-loading{background:linear-gradient(90deg,var(--bg3) 25%,#2a2518 50%,var(--bg3) 75%);background-size:400px 100%;animation:shimmer 1.4s infinite}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-bg" id="coverBg"></div>
+  <div class="cover-inner">
+    <span class="cover-eye">A trip made for two</span>
+    <h1 class="cover-title">10 Days in<br><em>South Florida</em></h1>
+    <div class="cover-rule"></div>
+    <p class="cover-tagline">A little bit of everything, all for you</p>
+    <div class="cover-stats">
+      <div class="cover-stat"><span class="cover-stat-num">4</span><span class="cover-stat-lbl">Full-Day Adventures</span></div>
+      <div class="cover-stat"><span class="cover-stat-num">6</span><span class="cover-stat-lbl">Afternoon Outings</span></div>
+      <div class="cover-stat"><span class="cover-stat-num">5</span><span class="cover-stat-lbl">Neighborhoods</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="sec-head reveal">
+    <span class="sec-eye">Full-Day Adventures</span>
+    <h2 class="sec-title">Four days to lose yourself in</h2>
+    <p class="sec-sub">No fixed order, no fixed plan — you pick the day, we build the vibe.</p>
+  </div>
+
+  <!-- MIAMI BEACH -->
+  <div class="destination-block reveal">
+    <div class="dest-hero">
+      <img class="img-loading" data-wiki="South_Beach,_Miami_Beach" data-hero="1" alt="Miami Beach">
+      <div class="dest-hero-overlay"><div class="dest-name">Miami Beach</div></div>
+    </div>
+    <div class="dest-body">
+      <div class="cat"><div class="cat-lbl">Beaches &amp; Parks</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Miami+Beach+Florida" target="_blank"><img class="place-card-img img-loading" data-wiki="Miami_Beach" alt="Miami Beach"><div class="place-card-name">The Beach <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=South+Pointe+Park+Miami+Beach" target="_blank"><img class="place-card-img img-loading" data-wiki="South_Pointe_Park" alt="South Pointe Park"><div class="place-card-name">South Pointe Park <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Haulover+Beach+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Haulover_Beach" alt="Haulover Beach"><div class="place-card-name">Haulover Beach <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Bayfront+Park+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Bayfront_Park_(Miami)" alt="Bayfront Park"><div class="place-card-name">Bayfront Park <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Stroll &amp; Explore</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Ocean+Drive+Miami+Beach" target="_blank"><img class="place-card-img img-loading" data-wiki="Ocean_Drive_(Miami_Beach)" alt="Ocean Drive"><div class="place-card-name">Ocean Drive Walk <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Lincoln+Road+Miami+Beach" target="_blank"><img class="place-card-img img-loading" data-wiki="Lincoln_Road_(Miami_Beach)" alt="Lincoln Road"><div class="place-card-name">Lincoln Road <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Brickell+City+Centre+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Brickell_City_Centre" alt="Brickell"><div class="place-card-name">Brickell City Center <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Bayside+Marketplace+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Bayside_Marketplace" alt="Bayside"><div class="place-card-name">Bayfront Marketplace <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=rent+a+bike+Miami+Beach" target="_blank"><img class="place-card-img img-loading" data-wiki="Citi_Bike_(Miami-Dade_County)" alt="Bike"><div class="place-card-name">Rent a Bike <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Experiences</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Frost+Science+Museum+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Phillip_and_Patricia_Frost_Museum_of_Science" alt="Frost Museum"><div class="place-card-name">Frost Science Museum <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Museum+of+Ice+Cream+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Museum_of_Ice_Cream" alt="Museum of Ice Cream"><div class="place-card-name">Museum of Ice Cream <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Food &amp; Drinks</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Nikki+Beach+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Nikki_Beach" alt="Nikki Beach"><div class="place-card-name">Nikki Beach <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Sugar+Rooftop+Bar+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="EAST_Miami" alt="Sugar Rooftop"><div class="place-card-name">Sugar Rooftop Bar <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Blackbird+Ordinary+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Blackbird_Ordinary" alt="Blackbird Ordinary"><div class="place-card-name">Blackbird Ordinary <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=La+Sanwicheria+Miami+Beach" target="_blank"><img class="place-card-img img-loading" data-wiki="South_Beach,_Miami_Beach" alt="La Sanwicheria"><div class="place-card-name">La Sanwicheria <span class="link-icon">↗</span></div></a>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- WYNWOOD -->
+  <div class="destination-block reveal">
+    <div class="dest-hero">
+      <img class="img-loading" data-wiki="Wynwood_Walls" data-hero="1" alt="Wynwood">
+      <div class="dest-hero-overlay"><div class="dest-name">Wynwood</div></div>
+    </div>
+    <div class="dest-body">
+      <div class="cat"><div class="cat-lbl">Art &amp; Culture</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Wynwood+Walls+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood_Walls" alt="Wynwood Walls"><div class="place-card-name">Wynwood Walls <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Superblue+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood_Arts_District" alt="Superblue"><div class="place-card-name">Superblue Miami <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Paradox+Museum+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood_Arts_District" alt="Paradox Museum"><div class="place-card-name">Paradox Museum <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Maurice+Ferre+Park+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Museum_Park_(Miami)" alt="Maurice Ferre Park"><div class="place-card-name">Maurice A. Ferré Park <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Stroll &amp; Play</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Wynwood+Marketplace+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood,_Miami" alt="Wynwood Marketplace"><div class="place-card-name">Wynwood Marketplace <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=rent+a+bike+Wynwood+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood,_Miami" alt="Bike Wynwood"><div class="place-card-name">Rent a Bike <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Fun+Dimension+game+center+Wynwood+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood,_Miami" alt="Fun Dimension"><div class="place-card-name">Fun Dimension Game Center <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Food &amp; Drinks</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Coyo+Taco+Wynwood+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood_Arts_District" alt="Coyo Taco"><div class="place-card-name">Coyo Taco <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Cerveceria+La+Tropical+Wynwood+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood,_Miami" alt="La Tropical"><div class="place-card-name">Cervecería La Tropical <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Miami+Mojito+Company+Wynwood" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood,_Miami" alt="Mojito Co"><div class="place-card-name">Miami Mojito Company <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Mayami+Wynwood+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Wynwood,_Miami" alt="Mayami"><div class="place-card-name">Mayami Wynwood <span class="link-icon">↗</span></div></a>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- LITTLE HAVANA -->
+  <div class="destination-block reveal">
+    <div class="dest-hero">
+      <img class="img-loading" data-wiki="Little_Havana" data-hero="1" alt="Little Havana">
+      <div class="dest-hero-overlay"><div class="dest-name">Little Havana</div></div>
+    </div>
+    <div class="dest-body">
+      <div class="cat"><div class="cat-lbl">Stroll &amp; Discover</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Calle+Ocho+Little+Havana+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Calle_Ocho,_Little_Havana" alt="Calle Ocho"><div class="place-card-name">Calle Ocho Walk <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Domino+Park+Little+Havana+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Máximo_Gómez_Park" alt="Domino Park"><div class="place-card-name">Domino Park <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Goodwill+Little+Havana+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Little_Havana" alt="Goodwill"><div class="place-card-name">Goodwill Treasure Hunting <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Food &amp; Drinks</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Ball+and+Chain+Little+Havana+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Ball_%26_Chain_(Miami_bar)" alt="Ball and Chain"><div class="place-card-name">Ball &amp; Chain <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=La+Trova+Little+Havana+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Little_Havana" alt="La Trova"><div class="place-card-name">La Trova <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Versailles+Restaurant+Little+Havana+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Versailles_Restaurant_(Miami)" alt="Versailles"><div class="place-card-name">Versailles (iconic &amp; touristy) <span class="link-icon">↗</span></div></a>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- COCONUT GROVE -->
+  <div class="destination-block reveal">
+    <div class="dest-hero">
+      <img class="img-loading" data-wiki="Coconut_Grove" data-hero="1" alt="Coconut Grove">
+      <div class="dest-hero-overlay"><div class="dest-name">Coconut Grove</div></div>
+    </div>
+    <div class="dest-body">
+      <div class="cat"><div class="cat-lbl">Parks &amp; Nature</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Matheson+Hammock+Park+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Matheson_Hammock_Park" alt="Matheson Hammock"><div class="place-card-name">Matheson Hammock Park &amp; Marina <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Fairchild+Tropical+Botanic+Garden+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Fairchild_Tropical_Botanic_Garden" alt="Fairchild Garden"><div class="place-card-name">Fairchild Tropical Botanic Garden <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Venetian+Pool+Coral+Gables+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Venetian_Pool" alt="Venetian Pool"><div class="place-card-name">Venetian Pool <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Stroll &amp; Explore</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=CocoWalk+Coconut+Grove+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="CocoWalk" alt="CocoWalk"><div class="place-card-name">CocoWalk <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Regatta+Grove+Coconut+Grove+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Coconut_Grove" alt="Regatta Grove"><div class="place-card-name">Regatta Grove <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Food &amp; Drinks</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Monty+Raw+Bar+Coconut+Grove+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Coconut_Grove" alt="Monty Raw Bar"><div class="place-card-name">Monty Raw Bar <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Barracuda+restaurant+Coconut+Grove+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Coconut_Grove" alt="Barracuda"><div class="place-card-name">Barracuda <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Fairchild+Night+at+the+Garden+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Fairchild_Tropical_Botanic_Garden" alt="Night at the Garden"><div class="place-card-name">Fairchild's Night at the Garden <span class="link-icon">↗</span></div></a>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- HOMESTEAD / EVERGLADES -->
+  <div class="destination-block reveal">
+    <div class="dest-hero">
+      <img class="img-loading" data-wiki="Everglades_National_Park" data-hero="1" alt="Everglades">
+      <div class="dest-hero-overlay"><div class="dest-name">Homestead &amp; The Everglades</div></div>
+    </div>
+    <div class="dest-body">
+      <div class="cat"><div class="cat-lbl">Nature &amp; Wildlife</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Everglades+National+Park+Florida" target="_blank"><img class="place-card-img img-loading" data-wiki="Everglades_National_Park" alt="Everglades NP"><div class="place-card-name">Everglades National Park <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Everglades+airboat+tour+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Airboat" alt="Airboat Tour"><div class="place-card-name">Everglades Airboat Tour <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Blackpoint+Wildlife+Drive+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Everglades_National_Park" alt="Blackpoint"><div class="place-card-name">Blackpoint Wildlife Drive <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Long+Key+State+Park+Florida" target="_blank"><img class="place-card-img img-loading" data-wiki="Long_Key_State_Park" alt="Long Key"><div class="place-card-name">Long Key State Park <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Blue+Lagoon+Miami+Florida" target="_blank"><img class="place-card-img img-loading" data-wiki="Everglades" alt="Blue Lagoon"><div class="place-card-name">Blue Lagoon <span class="link-icon">↗</span></div></a>
+      </div></div>
+      <div class="cat"><div class="cat-lbl">Sights</div>
+      <div class="place-grid">
+        <a class="place-card" href="https://www.google.com/search?q=Coral+Castle+Homestead+Florida" target="_blank"><img class="place-card-img img-loading" data-wiki="Coral_Castle" alt="Coral Castle"><div class="place-card-name">Coral Castle <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Zoo+Miami+Florida" target="_blank"><img class="place-card-img img-loading" data-wiki="Zoo_Miami" alt="Zoo Miami"><div class="place-card-name">Zoo Miami <span class="link-icon">↗</span></div></a>
+        <a class="place-card" href="https://www.google.com/search?q=Bayfront+Park+Homestead+Miami" target="_blank"><img class="place-card-img img-loading" data-wiki="Bayfront_Park_(Miami)" alt="Bayfront Park"><div class="place-card-name">Bayfront Park <span class="link-icon">↗</span></div></a>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="divider"><span>Afternoon Outings</span></div>
+
+  <div class="sec-head reveal">
+    <span class="sec-eye">Six Afternoons</span>
+    <h2 class="sec-title">Mix, match &amp; decide together</h2>
+    <p class="sec-sub">Flip through and say "ooh, that one" — that's the whole plan.</p>
+  </div>
+
+  <div class="afternoon-group reveal"><div class="cat-lbl">Sports &amp; Games</div>
+  <div class="aft-grid">
+    <a class="aft-card" href="https://www.google.com/search?q=Topgolf+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Topgolf" alt="Topgolf"><div class="aft-card-body"><span class="aft-cat">Sports &amp; Games</span><div class="aft-name">Topgolf <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=bowling+arcade+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Bowling" alt="Bowling"><div class="aft-card-body"><span class="aft-cat">Sports &amp; Games</span><div class="aft-name">Bowling + Arcade <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=mini+golf+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Miniature_golf" alt="Mini Golf"><div class="aft-card-body"><span class="aft-cat">Sports &amp; Games</span><div class="aft-name">Mini Golf <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=Dave+and+Busters+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Dave_%26_Buster%27s" alt="Dave and Busters"><div class="aft-card-body"><span class="aft-cat">Sports &amp; Games</span><div class="aft-name">Dave &amp; Buster's <span class="link-icon">↗</span></div></div></a>
+  </div></div>
+
+  <div class="afternoon-group reveal"><div class="cat-lbl">Thrills</div>
+  <div class="aft-grid">
+    <a class="aft-card" href="https://www.google.com/search?q=axe+throwing+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Axe_throwing" alt="Axe Throwing"><div class="aft-card-body"><span class="aft-cat">Thrills</span><div class="aft-name">Axe Throwing <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=ATV+rental+Miami+Homestead" target="_blank"><img class="aft-card-img img-loading" data-wiki="All-terrain_vehicle" alt="ATV"><div class="aft-card-body"><span class="aft-cat">Thrills</span><div class="aft-name">ATV Rental <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=escape+room+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Escape_room" alt="Escape Room"><div class="aft-card-body"><span class="aft-cat">Thrills</span><div class="aft-name">Escape Room <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=Smashit+House+rage+room+Fort+Lauderdale" target="_blank"><img class="aft-card-img img-loading" data-wiki="Smash_room" alt="Rage Room"><div class="aft-card-body"><span class="aft-cat">Thrills</span><div class="aft-name">The Smashit House — Rage Room <span class="link-icon">↗</span></div></div></a>
+  </div></div>
+
+  <div class="afternoon-group reveal"><div class="cat-lbl">Chill &amp; Explore</div>
+  <div class="aft-grid">
+    <a class="aft-card" href="https://www.google.com/search?q=picnic+parks+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Matheson_Hammock_Park" alt="Picnic"><div class="aft-card-body"><span class="aft-cat">Chill &amp; Explore</span><div class="aft-name">Picnic at the Park <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=ice+skating+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Ice_skating" alt="Ice Skating"><div class="aft-card-body"><span class="aft-cat">Chill &amp; Explore</span><div class="aft-name">Ice Skating <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=Hollywood+Beach+Florida+boardwalk" target="_blank"><img class="aft-card-img img-loading" data-wiki="Hollywood_Beach_(Florida)" alt="Hollywood Beach"><div class="aft-card-body"><span class="aft-cat">Chill &amp; Explore</span><div class="aft-name">Hollywood Beach <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=Flamingo+Gardens+Davie+Florida" target="_blank"><img class="aft-card-img img-loading" data-wiki="Flamingo_Gardens_(Florida)" alt="Flamingo Gardens"><div class="aft-card-body"><span class="aft-cat">Chill &amp; Explore</span><div class="aft-name">Flamingo Gardens <span class="link-icon">↗</span></div></div></a>
+  </div></div>
+
+  <div class="afternoon-group reveal"><div class="cat-lbl">Shopping</div>
+  <div class="aft-grid">
+    <a class="aft-card" href="https://www.google.com/search?q=Dolphin+Mall+Sweetwater+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Dolphin_Mall" alt="Dolphin Mall"><div class="aft-card-body"><span class="aft-cat">Shopping</span><div class="aft-name">Dolphin Mall <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=Dadeland+Mall+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Dadeland_Mall" alt="Dadeland Mall"><div class="aft-card-body"><span class="aft-cat">Shopping</span><div class="aft-name">Dadeland Mall <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=Aventura+Mall+Miami" target="_blank"><img class="aft-card-img img-loading" data-wiki="Aventura_Mall" alt="Aventura Mall"><div class="aft-card-body"><span class="aft-cat">Shopping</span><div class="aft-name">Aventura Mall <span class="link-icon">↗</span></div></div></a>
+    <a class="aft-card" href="https://www.google.com/search?q=Sawgrass+Mills+outlet+mall+Sunrise+Florida" target="_blank"><img class="aft-card-img img-loading" data-wiki="Sawgrass_Mills" alt="Sawgrass Mills"><div class="aft-card-body"><span class="aft-cat">Shopping</span><div class="aft-name">Sawgrass Mills Outlet <span class="link-icon">↗</span></div></div></a>
+  </div></div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-main">Hecho con amor &nbsp;·&nbsp; Made with love</div>
+  <div class="footer-sub">No rigid schedule &nbsp;·&nbsp; No pressure &nbsp;·&nbsp; You pick, we go</div>
+</div>
+
+<script>
+// Wikipedia REST API image loader
+// Works perfectly from a hosted page — no CORS issues
+const cache = {};
+
+async function getWikiThumb(article, width) {
+  if (cache[article] !== undefined) return cache[article];
+  cache[article] = null; // prevent duplicate fetches
+  try {
+    const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(article)}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const src = data?.thumbnail?.source;
+    if (src) {
+      cache[article] = src.replace(/\/\d+px-/, `/${width}px-`);
+    }
+  } catch(e) {}
+  return cache[article];
+}
+
+async function loadImages() {
+  const imgs = document.querySelectorAll('img[data-wiki]');
+  const articles = [...new Set([...imgs].map(i => i.dataset.wiki))];
+
+  // Fetch all in parallel
+  await Promise.all(articles.map(a => getWikiThumb(a, 800)));
+
+  // Apply to images
+  imgs.forEach(img => {
+    const isHero = img.dataset.hero === '1';
+    const width = isHero ? 1280 : 640;
+    getWikiThumb(img.dataset.wiki, width).then(src => {
+      if (src) {
+        const finalSrc = src.replace(/\/\d+px-/, `/${width}px-`);
+        img.src = finalSrc;
+        img.onload = () => img.classList.remove('img-loading');
+        img.onerror = () => img.classList.remove('img-loading');
+      } else {
+        img.classList.remove('img-loading');
+      }
+    });
+  });
+
+  // Cover background
+  getWikiThumb('South_Beach,_Miami_Beach', 1280).then(src => {
+    if (src) {
+      const big = src.replace(/\/\d+px-/, '/1280px-');
+      document.getElementById('coverBg').style.backgroundImage = `url('${big}')`;
+    }
+  });
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+loadImages();
+</script>
+</body>
+</html>
