@@ -332,3 +332,258 @@ function dl(){
   document.getElementById('status').textContent='✅ Descargado! Reemplaza el index.html en GitHub.';
 }
 </script>
+.sb-sub{font-size:13px;color:rgba(248,244,238,.5);margin-top:3px}
+.dest-block{margin-bottom:80px}
+.dest-hero{position:relative;overflow:hidden;height:370px;background:var(--bg3);border-radius:12px 12px 0 0}
+.dest-hero img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.dest-hero:hover img{transform:scale(1.03)}
+.dest-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,12,6,.93) 0%,rgba(5,12,6,.1) 50%,transparent 100%);display:flex;align-items:flex-end;padding:20px 26px;border-radius:12px 12px 0 0}
+.day-badge{display:inline-block;background:var(--gold);color:#1C1000;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:6px}
+.dest-name{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--cream);line-height:1}
+.dest-body{background:var(--card);border:.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:22px}
+.cat{margin-bottom:22px}
+.cat-lbl{font-size:10px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.cat-lbl::after{content:'';flex:1;height:.5px;background:var(--border)}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.pc{background:#0F1A10;border:.5px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s,transform .2s;display:block;text-decoration:none;color:inherit}
+.pc:hover{border-color:var(--gold);transform:translateY(-3px)}
+.pc img{width:100%;height:126px;object-fit:cover;display:block;background:var(--bg3)}
+.pc-name{padding:8px 10px 10px;font-size:14px;font-weight:600;color:var(--cream);line-height:1.3;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.li{opacity:0;font-size:10px;color:var(--gold);transition:opacity .2s;flex-shrink:0}
+.pc:hover .li,.ac:hover .li{opacity:1}
+.divider{display:flex;align-items:center;gap:16px;margin:72px 0 56px}
+.divider::before,.divider::after{content:'';flex:1;height:.5px;background:var(--border)}
+.divider span{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700;white-space:nowrap}
+.ag{margin-bottom:22px}
+.aft-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.ac{background:#0F1A10;border:.5px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s,transform .2s;display:block;text-decoration:none;color:inherit}
+.ac:hover{border-color:var(--gold);transform:translateY(-3px)}
+.ac img{width:100%;height:116px;object-fit:cover;display:block;background:var(--bg3)}
+.ac-body{padding:8px 10px 11px}
+.ac-cat{font-size:8px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:3px;display:block}
+.ac-name{font-size:14px;font-weight:600;color:var(--cream);line-height:1.3;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.menu-box{background:var(--card);border:1px solid var(--border);border-radius:0 0 12px 12px;padding:28px;margin-bottom:56px}
+.menu-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--gold-lt);margin-bottom:4px}
+.menu-sub{font-size:13px;color:var(--muted);margin-bottom:20px;font-style:italic}
+.mc-lbl{font-size:10px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:10px;margin:18px 0 10px}
+.mc-lbl::after{content:'';flex:1;height:.5px;background:var(--border)}
+.mp-row{display:flex;flex-wrap:wrap;gap:7px}
+.mp{background:#0F1A10;border:.5px solid var(--border);border-radius:20px;padding:7px 14px;font-size:13px;font-weight:500;color:var(--text)}
+.mp.f{border-color:#5A3A10;background:#1A1000}
+.mp.d{border-color:#1A3A5A;background:#0A1420}
+.footer{position:relative;overflow:hidden;text-align:center;padding:80px 40px;margin-top:80px}
+.footer-bg{position:absolute;inset:0;background-image:url('${FOOT}');background-size:cover;background-position:center 30%;filter:brightness(.28)}
+.footer-inner{position:relative;z-index:1}
+.footer-main{font-family:'Cormorant Garamond',serif;font-size:30px;font-style:italic;font-weight:700;color:var(--gold-lt);margin-bottom:10px}
+.footer-sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(248,244,238,.25)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+.shimmer{background:linear-gradient(90deg,var(--bg3) 25%,#1E3020 50%,var(--bg3) 75%);background-size:400px 100%;animation:shimmer 1.4s infinite}
+</style>
+</head>
+<body>
+<div class="cover"><div class="cover-bg"></div><div class="cover-inner">
+<span class="cover-eye">Una aventura hecha con amor</span>
+<h1 class="cover-title">La Aventura de<br><em>Marco y Lissette</em><br>en Miami</h1>
+<div class="cover-rule"></div>
+<p class="cover-tagline">10 días, un sinfín de recuerdos por hacer</p>
+<div class="cover-stats">
+<div class="cover-stat"><span class="cover-stat-num">4</span><span class="cover-stat-lbl">Días Completos</span></div>
+<div class="cover-stat"><span class="cover-stat-num">6</span><span class="cover-stat-lbl">Tardes de Plan</span></div>
+<div class="cover-stat"><span class="cover-stat-num">10</span><span class="cover-stat-lbl">Días Juntos</span></div>
+</div></div></div>
+<div class="page">
+<div class="reveal" style="margin-bottom:56px">
+<div class="sec-lbl">📅 Mayo 2026 — Itinerario</div>
+<div class="cal-grid">
+<div class="ch">LUN</div><div class="ch">MAR</div><div class="ch">MIÉ</div><div class="ch">JUE</div><div class="ch">VIE</div><div class="ch">SÁB</div><div class="ch">DOM</div>
+<div class="cd ce">28</div><div class="cd ce">29</div><div class="cd ce">30</div><div class="cd ce">1</div><div class="cd ce">2</div><div class="cd ce">3</div><div class="cd ce">4</div>
+<div class="cd ce">5</div><div class="cd ce">6</div><div class="cd ce">7</div><div class="cd ce">8</div><div class="cd ce">9</div><div class="cd ce">10</div><div class="cd ce">11</div>
+<div class="cd ca">12<br><small style="font-size:9px">✈️ Llega</small></div>
+<div class="cd ct">13<br><small style="font-size:9px">🌅 Tarde</small></div>
+<div class="cd ct">14<br><small style="font-size:9px">🌅 Tarde</small></div>
+<div class="cd cf">15<br><small style="font-size:9px">⭐ Día</small></div>
+<div class="cd cf">16<br><small style="font-size:9px">⭐ Día</small></div>
+<div class="cd cf">17<br><small style="font-size:9px">⭐ Día</small></div>
+<div class="cd ct">18<br><small style="font-size:9px">🌅 Tarde</small></div>
+<div class="cd ct">19<br><small style="font-size:9px">🌅 Tarde</small></div>
+<div class="cd ct">20<br><small style="font-size:9px">🌅 Tarde</small></div>
+<div class="cd ct">21<br><small style="font-size:9px">🌅 Tarde</small></div>
+<div class="cd cf">22<br><small style="font-size:9px">⭐ Día</small></div>
+<div class="cd cdep">23<br><small style="font-size:9px">🏠 Parte</small></div>
+<div class="cd ce">24</div>
+<div class="cd ce">25</div><div class="cd ce">26</div><div class="cd ce">27</div><div class="cd ce">28</div><div class="cd ce">29</div><div class="cd ce">30</div><div class="cd ce">31</div>
+</div>
+<div class="cal-leg">
+<div class="ll"><div class="ld" style="background:linear-gradient(135deg,#1A6B28,#2D9A3A)"></div>Llegada (12 mayo)</div>
+<div class="ll"><div class="ld" style="background:linear-gradient(135deg,#9A6A10,#D4A84B)"></div>Día completo ⭐ (15,16,17,22)</div>
+<div class="ll"><div class="ld" style="background:#1E3A22"></div>Tarde libre 🌅 (12,13,14,18,19,20,21)</div>
+<div class="ll"><div class="ld" style="background:linear-gradient(135deg,#8B2A1A,#C04030)"></div>Despedida (23 mayo)</div>
+</div></div>
+<div class="hubby-box reveal">
+<div class="hubby-title">📋 Horario de Hubby</div>
+<div class="sch-grid">
+<div class="sch-day"><div class="sch-dt">12 May — Mar</div><div class="sch-row"><div class="sch-time">8:30–9:30</div><div class="sch-act">🚶 Caminata</div></div><div class="sch-row"><div class="sch-time">10:00–2:00</div><div class="sch-act">📈 Trading</div></div><div class="sch-row"><div class="sch-time">2:00–3:30</div><div class="sch-act">💪 Gimnasio</div></div></div>
+<div class="sch-day"><div class="sch-dt">13 May — Mié</div><div class="sch-row"><div class="sch-time">8:30–9:30</div><div class="sch-act">🚶 Caminata</div></div><div class="sch-row"><div class="sch-time">10:00–2:00</div><div class="sch-act">📈 Trading</div></div><div class="sch-row"><div class="sch-time">2:00–3:30</div><div class="sch-act">💪 Gimnasio</div></div></div>
+<div class="sch-day"><div class="sch-dt">14 May — Jue</div><div class="sch-row"><div class="sch-time">8:30–9:30</div><div class="sch-act">🚶 Caminata</div></div><div class="sch-row"><div class="sch-time">10:00–2:00</div><div class="sch-act">📈 Trading</div></div><div class="sch-row"><div class="sch-time">2:00–3:30</div><div class="sch-act">💪 Gimnasio</div></div></div>
+<div class="sch-day"><div class="sch-dt">18 May — Lun</div><div class="sch-row"><div class="sch-time">8:30–9:30</div><div class="sch-act">🚶 Caminata</div></div><div class="sch-row"><div class="sch-time">10:00–2:00</div><div class="sch-act">📈 Trading</div></div><div class="sch-row"><div class="sch-time">2:00–3:30</div><div class="sch-act">💪 Gimnasio</div></div></div>
+<div class="sch-day"><div class="sch-dt">19 May — Mar</div><div class="sch-row"><div class="sch-time">8:30–9:30</div><div class="sch-act">🚶 Caminata</div></div><div class="sch-row"><div class="sch-time">10:00–2:00</div><div class="sch-act">📈 Trading</div></div><div class="sch-row"><div class="sch-time">2:00–3:30</div><div class="sch-act">💪 Gimnasio</div></div></div>
+<div class="sch-day"><div class="sch-dt">20 May — Mié</div><div class="sch-row"><div class="sch-time">8:30–9:30</div><div class="sch-act">🚶 Caminata</div></div><div class="sch-row"><div class="sch-time">10:00–2:00</div><div class="sch-act">📈 Trading</div></div><div class="sch-row"><div class="sch-time">2:00–3:30</div><div class="sch-act">💪 Gimnasio</div></div></div>
+<div class="sch-day"><div class="sch-dt">21 May — Jue</div><div class="sch-row"><div class="sch-time">8:30–9:30</div><div class="sch-act">🚶 Caminata</div></div><div class="sch-row"><div class="sch-time">10:00–2:00</div><div class="sch-act">📈 Trading</div></div><div class="sch-row"><div class="sch-time">2:00–3:30</div><div class="sch-act">💪 Gimnasio</div></div></div>
+</div></div>
+<div class="photo-divider reveal"><img src="${DIV1}" alt=""><div class="photo-divider-text"><h2>Aventuras de Día Completo</h2><p>Días 15, 16, 17 y 22 ⭐</p></div></div>
+<div class="sb full reveal" style="margin-top:44px"><div class="sb-icon">⭐</div><div class="sb-txt"><span class="sb-eye">Días 15, 16, 17 y 22 de mayo</span><div class="sb-title">Aventuras de Día Completo</div><div class="sb-sub">Sin horario fijo — tú eliges el día, nosotros ponemos el ambiente</div></div></div>
+<div class="dest-block reveal"><div class="dest-hero"><img class="shimmer" data-search="Miami Beach Ocean Drive South Beach night" data-hero="1" alt="Miami Beach"><div class="dest-overlay"><div><div class="day-badge">Día Completo ⭐</div><div class="dest-name">Miami Beach</div></div></div></div><div class="dest-body">
+<div class="cat"><div class="cat-lbl">Playas y Parques</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Miami+Beach+Florida" target="_blank"><img class="shimmer" data-search="Miami Beach white sand tropical water sunny" alt="La Playa"><div class="pc-name">La Playa <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=South+Pointe+Park+Miami+Beach" target="_blank"><img class="shimmer" data-search="South Pointe Park Miami Beach pier waterfront" alt="South Pointe Park"><div class="pc-name">South Pointe Park <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Haulover+Beach+Miami" target="_blank"><img class="shimmer" data-search="Haulover Beach Miami coast aerial" alt="Haulover Beach"><div class="pc-name">Haulover Beach <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Bayfront+Park+Miami" target="_blank"><img class="shimmer" data-search="Bayfront Park Miami waterfront green" alt="Bayfront Park"><div class="pc-name">Bayfront Park <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Pasear y Explorar</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Ocean+Drive+Miami+Beach" target="_blank"><img class="shimmer" data-search="Ocean Drive Miami Beach colorful art deco night" alt="Ocean Drive"><div class="pc-name">Caminata Ocean Drive <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Lincoln+Road+Miami+Beach" target="_blank"><img class="shimmer" data-search="Lincoln Road Miami Beach outdoor shopping" alt="Lincoln Road"><div class="pc-name">Lincoln Road <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Brickell+City+Centre+Miami" target="_blank"><img class="shimmer" data-search="Brickell City Centre Miami modern architecture" alt="Brickell"><div class="pc-name">Brickell City Center <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Bayside+Marketplace+Miami" target="_blank"><img class="shimmer" data-search="Bayside Marketplace Miami harbor boats" alt="Bayfront Marketplace"><div class="pc-name">Bayfront Marketplace <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=rent+a+bike+Miami+Beach" target="_blank"><img class="shimmer" data-search="bicycle rental beach boardwalk fun sunny" alt="Rentar Bicicleta"><div class="pc-name">Rentar Bicicleta <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Experiencias</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Frost+Science+Museum+Miami" target="_blank"><img class="shimmer" data-search="science museum modern planetarium Miami" alt="Frost Science Museum"><div class="pc-name">Frost Science Museum <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Museum+of+Ice+Cream+Miami" target="_blank"><img class="shimmer" data-search="museum ice cream colorful pink fun dessert" alt="Museum of Ice Cream"><div class="pc-name">Museum of Ice Cream <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Comida y Bebidas</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Nikki+Beach+Miami" target="_blank"><img class="shimmer" data-search="beach club pool party luxury white Miami" alt="Nikki Beach"><div class="pc-name">Nikki Beach <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Sugar+Rooftop+Bar+Miami" target="_blank"><img class="shimmer" data-search="rooftop bar Miami cocktails skyline view night" alt="Sugar Rooftop"><div class="pc-name">Sugar Rooftop Bar <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Blackbird+Ordinary+Miami" target="_blank"><img class="shimmer" data-search="speakeasy cocktail bar dark moody interior" alt="Blackbird Ordinary"><div class="pc-name">Blackbird Ordinary <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=La+Sanwicheria+Miami+Beach" target="_blank"><img class="shimmer" data-search="Cuban sandwich cafe street food Miami" alt="La Sanwicheria"><div class="pc-name">La Sanwicheria <span class="li">↗</span></div></a>
+</div></div></div></div>
+<div class="dest-block reveal"><div class="dest-hero"><img class="shimmer" data-search="Wynwood Miami colorful graffiti mural street art wall" data-hero="1" alt="Wynwood"><div class="dest-overlay"><div><div class="day-badge">Día Completo ⭐</div><div class="dest-name">Wynwood</div></div></div></div><div class="dest-body">
+<div class="cat"><div class="cat-lbl">Arte y Cultura</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Wynwood+Walls+Miami" target="_blank"><img class="shimmer" data-search="street art mural colorful graffiti outdoor museum" alt="Wynwood Walls"><div class="pc-name">Wynwood Walls <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Superblue+Miami" target="_blank"><img class="shimmer" data-search="immersive art installation colorful light room" alt="Superblue Miami"><div class="pc-name">Superblue Miami <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Paradox+Museum+Miami" target="_blank"><img class="shimmer" data-search="optical illusion museum interactive fun" alt="Paradox Museum"><div class="pc-name">Paradox Museum <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Maurice+Ferre+Park+Miami" target="_blank"><img class="shimmer" data-search="waterfront park Miami skyline green" alt="Ferré Park"><div class="pc-name">Maurice A. Ferré Park <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Pasear y Jugar</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Wynwood+Marketplace+Miami" target="_blank"><img class="shimmer" data-search="outdoor market food vendors night Miami" alt="Wynwood Marketplace"><div class="pc-name">Wynwood Marketplace <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=rent+a+bike+Wynwood+Miami" target="_blank"><img class="shimmer" data-search="city bike urban street colorful neighborhood" alt="Bicicleta Wynwood"><div class="pc-name">Rentar Bicicleta <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Fun+Dimension+game+center+Wynwood+Miami" target="_blank"><img class="shimmer" data-search="arcade game center neon fun entertainment" alt="Fun Dimension"><div class="pc-name">Fun Dimension Game Center <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Comida y Bebidas</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Coyo+Taco+Wynwood+Miami" target="_blank"><img class="shimmer" data-search="taco Mexican street food restaurant colorful" alt="Coyo Taco"><div class="pc-name">Coyo Taco <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Cerveceria+La+Tropical+Wynwood+Miami" target="_blank"><img class="shimmer" data-search="craft beer brewery tropical bar outdoor" alt="La Tropical"><div class="pc-name">Cervecería La Tropical <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Miami+Mojito+Company+Wynwood" target="_blank"><img class="shimmer" data-search="mojito cocktail mint rum lime bar green" alt="Mojito Company"><div class="pc-name">Miami Mojito Company <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Mayami+Wynwood+Miami" target="_blank"><img class="shimmer" data-search="trendy upscale restaurant Miami dinner" alt="Mayami Wynwood"><div class="pc-name">Mayami Wynwood <span class="li">↗</span></div></a>
+</div></div></div></div>
+<div class="dest-block reveal"><div class="dest-hero"><img class="shimmer" data-search="Little Havana Calle Ocho Miami Cuban street colorful" data-hero="1" alt="La Pequeña Habana"><div class="dest-overlay"><div><div class="day-badge">Día Completo ⭐</div><div class="dest-name">La Pequeña Habana</div></div></div></div><div class="dest-body">
+<div class="cat"><div class="cat-lbl">Pasear y Descubrir</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Calle+Ocho+Little+Havana+Miami" target="_blank"><img class="shimmer" data-search="Calle Ocho Little Havana Miami Cuban street" alt="Calle Ocho"><div class="pc-name">Caminata por Calle Ocho <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Domino+Park+Little+Havana+Miami" target="_blank"><img class="shimmer" data-search="old men playing dominoes Cuba park outdoor" alt="Parque del Dominó"><div class="pc-name">Parque del Dominó <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Goodwill+Little+Havana+Miami" target="_blank"><img class="shimmer" data-search="thrift store vintage clothes rack bargain" alt="Goodwill"><div class="pc-name">Thrift Shopping (Goodwill) <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Comida y Bebidas</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Ball+and+Chain+Little+Havana+Miami" target="_blank"><img class="shimmer" data-search="salsa bar live music Latin dancing Cuba Miami" alt="Ball Chain"><div class="pc-name">Ball &amp; Chain <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=La+Trova+Little+Havana+Miami" target="_blank"><img class="shimmer" data-search="Cuban live music bar nightclub Latin" alt="La Trova"><div class="pc-name">La Trova <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Versailles+Restaurant+Little+Havana+Miami" target="_blank"><img class="shimmer" data-search="Cuban restaurant cafeteria classic retro Miami" alt="Versailles"><div class="pc-name">Versailles (icónico) <span class="li">↗</span></div></a>
+</div></div></div></div>
+<div class="dest-block reveal"><div class="dest-hero"><img class="shimmer" data-search="Coconut Grove Miami bay tropical waterfront lush" data-hero="1" alt="Coconut Grove"><div class="dest-overlay"><div><div class="day-badge">Día Completo ⭐</div><div class="dest-name">Coconut Grove</div></div></div></div><div class="dest-body">
+<div class="cat"><div class="cat-lbl">Parques y Naturaleza</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Matheson+Hammock+Park+Miami" target="_blank"><img class="shimmer" data-search="Matheson Hammock Park Miami atoll pool lagoon" alt="Matheson Hammock"><div class="pc-name">Matheson Hammock Park <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Fairchild+Tropical+Botanic+Garden+Miami" target="_blank"><img class="shimmer" data-search="tropical botanic garden exotic flowers plants" alt="Fairchild Garden"><div class="pc-name">Fairchild Tropical Garden <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Venetian+Pool+Coral+Gables+Miami" target="_blank"><img class="shimmer" data-search="historic swimming pool stone grotto Coral Gables" alt="Venetian Pool"><div class="pc-name">Venetian Pool <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Pasear y Explorar</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=CocoWalk+Coconut+Grove+Miami" target="_blank"><img class="shimmer" data-search="outdoor shopping center courtyard tropical Miami" alt="CocoWalk"><div class="pc-name">CocoWalk <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Regatta+Grove+Coconut+Grove+Miami" target="_blank"><img class="shimmer" data-search="marina waterfront park boats Miami bay" alt="Regatta Grove"><div class="pc-name">Regatta Grove <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Comida y Bebidas</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Monty+Raw+Bar+Coconut+Grove+Miami" target="_blank"><img class="shimmer" data-search="raw bar oysters seafood waterfront restaurant" alt="Monty Raw Bar"><div class="pc-name">Monty Raw Bar <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Barracuda+restaurant+Coconut+Grove+Miami" target="_blank"><img class="shimmer" data-search="seafood restaurant waterfront Miami bay view" alt="Barracuda"><div class="pc-name">Barracuda <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Fairchild+Night+at+the+Garden+Miami" target="_blank"><img class="shimmer" data-search="botanical garden night lights glow event" alt="Noche en el Jardín"><div class="pc-name">Noche en el Jardín — Fairchild <span class="li">↗</span></div></a>
+</div></div></div></div>
+<div class="dest-block reveal"><div class="dest-hero"><img class="shimmer" data-search="Everglades National Park Florida green wetlands marsh" data-hero="1" alt="Los Everglades"><div class="dest-overlay"><div><div class="day-badge">Día Completo ⭐</div><div class="dest-name">Homestead y Los Everglades</div></div></div></div><div class="dest-body">
+<div class="cat"><div class="cat-lbl">Naturaleza y Vida Silvestre</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Everglades+National+Park+Florida" target="_blank"><img class="shimmer" data-search="Everglades National Park swamp marsh Florida nature" alt="Parque Everglades"><div class="pc-name">Parque Nacional Everglades <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Everglades+airboat+tour+Miami" target="_blank"><img class="shimmer" data-search="airboat tour Everglades swamp Florida adventure" alt="Hidrodeslizador"><div class="pc-name">Tour en Hidrodeslizador <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Blackpoint+Wildlife+Drive+Miami" target="_blank"><img class="shimmer" data-search="wildlife birds nature Florida wetlands reserve" alt="Blackpoint"><div class="pc-name">Blackpoint Wildlife Drive <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Long+Key+State+Park+Florida" target="_blank"><img class="shimmer" data-search="Florida Keys beach turquoise clear water park" alt="Long Key"><div class="pc-name">Long Key State Park <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Blue+Lagoon+Miami+Florida" target="_blank"><img class="shimmer" data-search="blue lagoon clear water swimming Florida tropical" alt="Blue Lagoon"><div class="pc-name">Blue Lagoon <span class="li">↗</span></div></a>
+</div></div>
+<div class="cat"><div class="cat-lbl">Atracciones</div><div class="pg">
+<a class="pc" href="https://www.google.com/search?q=Coral+Castle+Homestead+Florida" target="_blank"><img class="shimmer" data-search="Coral Castle Homestead Florida limestone sculpture" alt="Coral Castle"><div class="pc-name">Coral Castle <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Zoo+Miami+Florida" target="_blank"><img class="shimmer" data-search="Zoo Miami tropical animals wildlife" alt="Zoo Miami"><div class="pc-name">Zoo Miami <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=Bayfront+Park+Homestead+Miami" target="_blank"><img class="shimmer" data-search="waterfront park Miami bay green landscape" alt="Bayfront Park"><div class="pc-name">Bayfront Park <span class="li">↗</span></div></a>
+</div></div></div></div>
+<div class="photo-divider reveal"><img src="${DIV2}" alt=""><div class="photo-divider-text"><h2>Planes de Tarde</h2><p>Días 12, 13, 14, 18, 19, 20 y 21 🌅</p></div></div>
+<div class="sb aft reveal" style="margin-top:44px"><div class="sb-icon">🌅</div><div class="sb-txt"><span class="sb-eye">Días 12, 13, 14, 18, 19, 20 y 21 de mayo</span><div class="sb-title">Planes de Tarde</div><div class="sb-sub">Escoge lo que se te antoje — aquí no hay reglas</div></div></div>
+<div class="ag reveal"><div class="cat-lbl">Deportes y Juegos</div><div class="aft-grid">
+<a class="ac" href="https://www.google.com/search?q=Topgolf+Miami" target="_blank"><img class="shimmer" data-search="Topgolf driving range night lights fun golf" alt="Topgolf"><div class="ac-body"><span class="ac-cat">Deportes y Juegos</span><div class="ac-name">Topgolf <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=bowling+arcade+Miami" target="_blank"><img class="shimmer" data-search="bowling alley neon pins fun lanes" alt="Boliche"><div class="ac-body"><span class="ac-cat">Deportes y Juegos</span><div class="ac-name">Boliche + Arcade <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=mini+golf+Miami" target="_blank"><img class="shimmer" data-search="mini golf colorful course outdoor fun" alt="Mini Golf"><div class="ac-body"><span class="ac-cat">Deportes y Juegos</span><div class="ac-name">Mini Golf <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=Dave+and+Busters+Miami" target="_blank"><img class="shimmer" data-search="Dave Busters entertainment arcade games bar" alt="Dave Busters"><div class="ac-body"><span class="ac-cat">Deportes y Juegos</span><div class="ac-name">Dave &amp; Buster's <span class="li">↗</span></div></div></a>
+</div></div>
+<div class="ag reveal"><div class="cat-lbl">Adrenalina</div><div class="aft-grid">
+<a class="ac" href="https://www.google.com/search?q=axe+throwing+Miami" target="_blank"><img class="shimmer" data-search="axe throwing target wood bullseye sport" alt="Hachas"><div class="ac-body"><span class="ac-cat">Adrenalina</span><div class="ac-name">Lanzamiento de Hachas <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=ATV+rental+Miami+Homestead" target="_blank"><img class="shimmer" data-search="ATV quad bike off road dirt adventure" alt="ATV"><div class="ac-body"><span class="ac-cat">Adrenalina</span><div class="ac-name">Renta de ATV <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=escape+room+Miami" target="_blank"><img class="shimmer" data-search="escape room puzzle mystery locked dark" alt="Escape Room"><div class="ac-body"><span class="ac-cat">Adrenalina</span><div class="ac-name">Escape Room <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=Smashit+House+rage+room+Fort+Lauderdale" target="_blank"><img class="shimmer" data-search="rage room smash break things stress relief fun" alt="Rage Room"><div class="ac-body"><span class="ac-cat">Adrenalina</span><div class="ac-name">The Smashit House <span class="li">↗</span></div></div></a>
+</div></div>
+<div class="ag reveal"><div class="cat-lbl">Relajarse y Explorar</div><div class="aft-grid">
+<a class="ac" href="https://www.google.com/search?q=picnic+parks+Miami" target="_blank"><img class="shimmer" data-search="picnic couple park blanket grass sunny" alt="Picnic"><div class="ac-body"><span class="ac-cat">Relajarse</span><div class="ac-name">Picnic en el Parque <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=ice+skating+Miami" target="_blank"><img class="shimmer" data-search="ice skating rink couple romantic fun" alt="Patinaje"><div class="ac-body"><span class="ac-cat">Relajarse</span><div class="ac-name">Patinaje sobre Hielo <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=Hollywood+Beach+Florida+boardwalk" target="_blank"><img class="shimmer" data-search="Hollywood Beach Florida boardwalk ocean walk" alt="Hollywood Beach"><div class="ac-body"><span class="ac-cat">Relajarse</span><div class="ac-name">Hollywood Beach <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=Flamingo+Gardens+Davie+Florida" target="_blank"><img class="shimmer" data-search="flamingo pink bird tropical garden Florida" alt="Flamingo Gardens"><div class="ac-body"><span class="ac-cat">Relajarse</span><div class="ac-name">Flamingo Gardens <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zIg3L7eML64yYLRSNaiwsEixTDVPMjeyMEg0Sku1tDKoMLFINja1MDI3N0hOTbVMSfESzsjPz65USM0rSS0qSczMywWyADUrF1g&q=hooky+entertainment&sourceid=chrome&ie=UTF-8" target="_blank"><img class="shimmer" data-search="movie cinema theater seats screen popcorn" alt="Cine"><div class="ac-body"><span class="ac-cat">Relajarse</span><div class="ac-name">El Cine — Hooky Entertainment <span class="li">↗</span></div></div></a>
+</div></div>
+<div class="ag reveal"><div class="cat-lbl">Compras</div><div class="aft-grid">
+<a class="ac" href="https://www.google.com/search?q=Dolphin+Mall+Sweetwater+Miami" target="_blank"><img class="shimmer" data-search="Dolphin Mall Miami shopping outlet exterior" alt="Dolphin Mall"><div class="ac-body"><span class="ac-cat">Compras</span><div class="ac-name">Dolphin Mall <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=Dadeland+Mall+Miami" target="_blank"><img class="shimmer" data-search="Dadeland Mall Miami shopping exterior modern" alt="Dadeland Mall"><div class="ac-body"><span class="ac-cat">Compras</span><div class="ac-name">Dadeland Mall <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=Aventura+Mall+Miami" target="_blank"><img class="shimmer" data-search="Aventura Mall Miami luxury shopping modern" alt="Aventura Mall"><div class="ac-body"><span class="ac-cat">Compras</span><div class="ac-name">Aventura Mall <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=Sawgrass+Mills+outlet+mall+Sunrise+Florida" target="_blank"><img class="shimmer" data-search="Sawgrass Mills outlet mall Florida shopping" alt="Sawgrass Mills"><div class="ac-body"><span class="ac-cat">Compras</span><div class="ac-name">Sawgrass Mills Outlet <span class="li">↗</span></div></div></a>
+<a class="ac" href="https://www.google.com/search?q=The+Falls+Mall+Miami" target="_blank"><img class="shimmer" data-search="The Falls outdoor mall waterfall Miami shopping" alt="The Falls"><div class="ac-body"><span class="ac-cat">Compras</span><div class="ac-name">The Falls <span class="li">↗</span></div></div></a>
+</div></div>
+<div class="divider reveal"><span>✦</span></div>
+<div class="reveal" style="margin-bottom:48px">
+<div class="sec-lbl">🍽️ Restaurantes para Probar</div>
+<div class="pg">
+<a class="pc" href="https://www.google.com/search?q=marakas+pizza+bird+road" target="_blank"><img class="shimmer" data-search="pizza restaurant Italian pie cheese slice" alt="Marakas Pizza"><div class="pc-name">Marakas Pizza <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=mama+mia+homestead" target="_blank"><img class="shimmer" data-search="Italian pizza restaurant cozy interior dining" alt="Mamma Mia Pizzeria 2"><div class="pc-name">Mamma Mia Pizzeria 2 <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=tiagos+tacos+cutler+bay" target="_blank"><img class="shimmer" data-search="taco Mexican restaurant casual colorful dining" alt="Tiagos Tacos"><div class="pc-name">Tiago's Tacos <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=haagen+dazs+the+falls" target="_blank"><img class="shimmer" data-search="Haagen Dazs ice cream shop dessert sweet" alt="Haagen Dazs"><div class="pc-name">Häagen-Dazs <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=buffalo+wild+wings+homestead" target="_blank"><img class="shimmer" data-search="Buffalo Wild Wings sports bar chicken wings" alt="Buffalo Wild Wings"><div class="pc-name">Buffalo Wild Wings <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=texas+roadhouse+homestead" target="_blank"><img class="shimmer" data-search="Texas Roadhouse steakhouse American ribs restaurant" alt="Texas Roadhouse"><div class="pc-name">Texas Roadhouse <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=smash+bros+burgers" target="_blank"><img class="shimmer" data-search="smash burger juicy cheese patty restaurant" alt="Smash Bros Burgers"><div class="pc-name">Smash Bros Burgers &amp; Shakes <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=fireman+derek%27s+wynwood" target="_blank"><img class="shimmer" data-search="bakery pie dessert sweet pastry shop" alt="Fireman Dereks"><div class="pc-name">Fireman Derek's Bake Shop <span class="li">↗</span></div></a>
+<a class="pc" href="https://www.google.com/search?q=el+palacio+de+los+jugos+kendall" target="_blank"><img class="shimmer" data-search="Cuban juice bar tropical fruit Miami colorful" alt="El Palacio de los Jugos"><div class="pc-name">El Palacio de los Jugos <span class="li">↗</span></div></a>
+</div></div>
+<div class="divider reveal"><span>✦</span></div>
+<div class="photo-divider reveal"><img src="${DIV1}" alt=""><div class="photo-divider-text"><h2>El Menú de Hubby</h2><p>Cocinado con amor 🍳</p></div></div>
+<div class="menu-box reveal">
+<div class="menu-title">El Menú de Hubby 🍴</div>
+<div class="menu-sub">Hecho con amor, todo fresquito — tú decides qué se te antoja</div>
+<div class="mc-lbl">Desayuno</div><div class="mp-row"><span class="mp f">🍳 Huevos Fritos</span><span class="mp f">🥚 Huevos Revueltos</span><span class="mp f">🥓 Sándwich de Tocino, Huevo y Queso</span><span class="mp f">🫙 Mangú</span></div>
+<div class="mc-lbl">Almuerzo / Meriendas</div><div class="mp-row"><span class="mp f">🥪 Sándwich Gourmet de Jamón y Queso</span><span class="mp f">🍓 Frutas Frescas</span></div>
+<div class="mc-lbl">Cena</div><div class="mp-row"><span class="mp f">🌮 Birria, Bistec o Pollo — Tacos o Quesadillas</span><span class="mp f">🍲 Ajiaco / Sancocho</span><span class="mp f">🥩 Congri con Bistec y Chimichurri</span><span class="mp f">🍝 Carbonara (versión proteína)</span><span class="mp f">🍝 Amatriciana (versión proteína)</span><span class="mp f">🫚 Mofongo con tu proteína favorita</span><span class="mp f">🌊 Aguachile</span><span class="mp f">🦐 Camarones al Ajillo</span><span class="mp f">🥗 Bistec con Ensalada Griega</span><span class="mp f">🐔 Pollo al Ajillo con Ensalada Griega</span></div>
+<div class="mc-lbl">Postres</div><div class="mp-row"><span class="mp f">🥧 Pay de Lima</span><span class="mp f">🍪 Pay de Cookies and Cream</span><span class="mp f">🍰 Cheesecake</span><span class="mp f">🍦 Big Boy Ice Cream Bars</span><span class="mp f">🍪 Galletas</span></div>
+<div class="mc-lbl">Bebidas</div><div class="mp-row"><span class="mp d">🥂 Mimosas</span><span class="mp d">🍹 Margarita</span><span class="mp d">🌿 Mojito</span><span class="mp d">🥃 Shots de Tequila</span><span class="mp d">🍶 Soju</span><span class="mp d">🍷 Vino Dulce</span></div>
+</div>
+</div>
+<div class="footer"><div class="footer-bg"></div><div class="footer-inner"><div class="footer-main">Hecho con amor para ti, Lissette 🌿</div><div class="footer-sub">Sin horario fijo · Sin presión · Tú decides, nosotros vamos</div></div></div>
+<script>
+const KEY='${KEY}';const cache={};
+async function px(q,hero){if(cache[q]!==undefined)return cache[q];cache[q]=null;try{const r=await fetch('https://api.pexels.com/v1/search?query='+encodeURIComponent(q)+'&per_page=1&orientation=landscape',{headers:{Authorization:KEY}});const d=await r.json();const p=d?.photos?.[0];if(p)cache[q]=hero?(p.src.large2x||p.src.large):p.src.medium;}catch(e){}return cache[q];}
+async function loadImgs(){const imgs=Array.from(document.querySelectorAll('img[data-search]'));for(let i=0;i<imgs.length;i+=5){const batch=imgs.slice(i,i+5);await Promise.all(batch.map(async img=>{const src=await px(img.dataset.search,img.dataset.hero==='1');if(src){img.src=src;img.onload=()=>img.classList.remove('shimmer');img.onerror=()=>img.classList.remove('shimmer');}else img.classList.remove('shimmer');}));await new Promise(r=>setTimeout(r,250));}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.05});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));loadImgs();
+<\/script></body></html>`;
+
+function dl(){
+  const blob=new Blob([html],{type:'text/html'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='index.html';a.click();
+  URL.revokeObjectURL(url);
+  document.getElementById('status').textContent='✅ Descargado! Reemplaza el index.html en GitHub.';
+}
+</script>
