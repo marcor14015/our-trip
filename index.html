@@ -1,38 +1,5 @@
 
-<style>
-body{margin:0;padding:20px;font-family:system-ui,sans-serif;background:#EDE8DC;color:#2C1810}
-.btn{background:#C49A50;color:#1C0800;border:none;padding:14px 28px;font-size:15px;font-weight:700;border-radius:8px;cursor:pointer;margin-bottom:16px;display:block;width:100%;text-align:center}
-.btn:hover{background:#A07830}
-.note{font-size:13px;color:#8B6020;line-height:1.6}
-#status{margin-top:12px;font-size:13px;color:#6A4010;font-weight:600}
-</style>
-<div>
-<button class="btn" onclick="dl()">⬇ Descargar index.html — Versión Final</button>
-<div class="note">Todas las fotos asignadas · Menú estilo restaurante · Fondo crema más oscuro · Secret Menu añadido</div>
-<div id="status"></div>
-</div>
-<script>
-const B='https://marcor14015.github.io/our-trip/';
-const P={
-  cover:B+'IMG_7634.JPG',
-  miami:B+'c49c48c1-671c-4563-bb1a-d39c0665f745.jpg',
-  wynwood:B+'c8581fb9-d3b7-4104-94c0-1b2a8845579c.jpg',
-  littlehavana:B+'d3e9b374-760d-4ce8-9c9d-281ead4577d2.jpg',
-  coconut:B+'60a33e7d-ab86-4747-b8ae-6b90dfcf829f.jpg',
-  everglades:B+'IMG_0717.JPG',
-  tarde:B+'IMG_1358.JPG',
-  restaurantes:B+'c8581fb9-d3b7-4104-94c0-1b2a8845579c.jpg',
-  menu:B+'ee3570fc-70d6-49a3-ab10-981d521ba4ca.jpg',
-  footer:B+'2e13c23f-e675-46c6-925d-c8d189e1a873.jpg',
-  itinerario:B+'489ec801-76a9-4c1e-b433-b2d1f04597f9.jpg',
-  horario:B+'c8581fb9-d3b7-4104-94c0-1b2a8845579c.jpg',
-  adrenalina:B+'IMG_0691.JPG',
-  relajarse:B+'IMG_0651.JPG',
-  compras:B+'IMG_1007.JPG',
-};
-const KEY='SMPWSqQcRBF9zsoS1YdG71gEJyvddL6nWc7sAiMtU7HvyXf9KlCmXuGC';
-
-const html=`<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -40,21 +7,12 @@ const html=`<!DOCTYPE html>
 <title>La Aventura de Marco y Lissette en Miami</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#EDE6D6;--bg2:#E5DEC8;--bg3:#D8D0BA;
-  --card:#F2EBD9;--border:rgba(44,24,16,.12);
-  --gold:#B8860B;--gold-lt:#D4A84B;--gold-dk:#7A5A00;
-  --cream:#2C1810;--muted:#7A6550;--text:#2C1810;
-  --red:#7A1818;--dark:#1A0E04;--dark2:#120A02;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+:root{--bg:#EDE6D6;--bg2:#E5DEC8;--bg3:#D8D0BA;--card:#F2EBD9;--border:rgba(44,24,16,.12);--gold:#B8860B;--gold-lt:#D4A84B;--gold-dk:#7A5A00;--cream:#2C1810;--muted:#7A6550;--text:#2C1810;--red:#7A1818;--dark:#1A0E04;--dark2:#120A02}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-weight:400;line-height:1.6;width:100%}
-
 .topbar{background:#120A02;padding:12px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;width:100%}
 .topbar-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:#D4A84B}
 .topbar-hint{font-size:11px;color:rgba(212,168,75,.5)}
-
 .cover{display:flex;align-items:stretch;min-height:100vh;width:100%}
 .cover-img{width:45%;flex-shrink:0;overflow:hidden}
 .cover-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
@@ -68,9 +26,7 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
 .stat-num{display:block;font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1}
 .stat-lbl{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:3px}
 .cover-hint{font-size:14px;color:var(--gold-dk);padding:12px 16px;border:.5px solid rgba(184,134,11,.3);border-radius:8px;background:rgba(184,134,11,.06);line-height:1.6;font-weight:500}
-
 .page{width:100%;padding:64px 48px 0}
-
 .sec-header{display:flex;align-items:stretch;border-radius:12px 12px 0 0;overflow:hidden;border:1px solid var(--border);border-bottom:none}
 .sec-header-img{width:160px;flex-shrink:0;overflow:hidden}
 .sec-header-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
@@ -82,19 +38,13 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
 .sec-header.menu-sec{border-left:6px solid var(--gold)}
 .sec-header.schedule{border-left:6px solid #1A5A8A}
 .sec-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:10px;margin-bottom:8px}
-.badge-full{background:#D8EED8;color:#1A5A22}
-.badge-aft{background:#F5E8C8;color:#7A4A00}
-.badge-rest{background:#F0D8D8;color:#7A2020}
-.badge-menu{background:#F5EACC;color:#7A5010}
-.badge-sch{background:#D8E8F5;color:#1A3A6A}
+.badge-full{background:#D8EED8;color:#1A5A22}.badge-aft{background:#F5E8C8;color:#7A4A00}.badge-rest{background:#F0D8D8;color:#7A2020}.badge-menu{background:#F5EACC;color:#7A5010}.badge-sch{background:#D8E8F5;color:#1A3A6A}
 .sec-name{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:4px}
 .sec-sub{font-size:14px;color:var(--muted)}
-
 .dest-body{background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:24px;margin-bottom:52px}
 .cat-lbl{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--gold-dk);display:flex;align-items:center;gap:10px;margin:20px 0 12px}
 .cat-lbl:first-child{margin-top:0}
 .cat-lbl::after{content:'';flex:1;height:.5px;background:rgba(44,24,16,.15)}
-
 .pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
 .pc{background:var(--bg);border:.5px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;display:block;text-decoration:none;color:inherit}
 .pc:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 16px rgba(184,134,11,.12)}
@@ -102,20 +52,14 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
 .pc-name{padding:10px 12px 12px;font-size:15px;font-weight:600;color:var(--cream);line-height:1.3;display:flex;align-items:center;justify-content:space-between;gap:6px}
 .li{opacity:0;font-size:11px;color:var(--gold);transition:opacity .2s}
 .pc:hover .li,.ac:hover .li{opacity:1}
-
 .cal-wrap{background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:24px;margin-bottom:52px}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:14px}
 .ch{text-align:center;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 0}
 .cd{text-align:center;padding:10px 4px;border-radius:8px;font-size:15px;font-weight:600;line-height:1.3}
-.ce{color:rgba(44,24,16,.2)}
-.ca{background:linear-gradient(135deg,#1A6B28,#2D9A3A);color:#fff;font-weight:800}
-.cdep{background:linear-gradient(135deg,#8B2A1A,#C04030);color:#fff;font-weight:800}
-.cf{background:linear-gradient(135deg,#9A6A10,#C49A50);color:#fff;font-weight:800}
-.ct{background:rgba(184,134,11,.1);color:var(--text);border:.5px solid rgba(184,134,11,.25)}
+.ce{color:rgba(44,24,16,.2)}.ca{background:linear-gradient(135deg,#1A6B28,#2D9A3A);color:#fff;font-weight:800}.cdep{background:linear-gradient(135deg,#8B2A1A,#C04030);color:#fff;font-weight:800}.cf{background:linear-gradient(135deg,#9A6A10,#C49A50);color:#fff;font-weight:800}.ct{background:rgba(184,134,11,.1);color:var(--text);border:.5px solid rgba(184,134,11,.25)}
 .cal-leg{display:flex;flex-wrap:wrap;gap:12px}
 .ll{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted)}
 .ld{width:12px;height:12px;border-radius:3px;flex-shrink:0}
-
 .sch-body{background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:24px;margin-bottom:52px}
 .sch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
 .sch-day{background:var(--bg);border:.5px solid var(--border);border-radius:10px;padding:16px}
@@ -123,7 +67,6 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
 .sch-row{display:flex;gap:10px;margin-bottom:8px}
 .sch-time{font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;min-width:92px}
 .sch-act{font-size:14px;font-weight:500;color:var(--text)}
-
 .banner{display:flex;align-items:center;border-radius:12px;overflow:hidden;margin-bottom:36px}
 .banner-icon{width:72px;height:72px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
 .banner.full{background:linear-gradient(135deg,#2D5A30,#3A8040)}.banner.full .banner-icon{background:#3A8040}
@@ -132,39 +75,30 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
 .banner-eye{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;display:block;margin-bottom:4px}
 .banner-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#fff;line-height:1.1}
 .banner-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:3px}
-
-.ag{margin-bottom:0}
 .aft-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
-.ac{background:var(--bg);border:.5px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;display:block;text-decoration:none;color:inherit}
+.ac{background:var(--bg);border:.5px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s,transform .2s;display:block;text-decoration:none;color:inherit}
 .ac:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 16px rgba(184,134,11,.12)}
 .ac img{width:100%;height:120px;object-fit:cover;display:block;background:var(--bg3)}
 .ac-body{padding:10px 12px 12px}
 .ac-cat{font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gold-dk);margin-bottom:4px;display:block}
 .ac-name{font-size:15px;font-weight:600;color:var(--cream);line-height:1.3;display:flex;align-items:center;justify-content:space-between;gap:6px}
-
 .divider{display:flex;align-items:center;gap:16px;margin:64px 0 52px}
 .divider::before,.divider::after{content:'';flex:1;height:.5px;background:rgba(44,24,16,.15)}
 .divider span{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-dk);font-weight:700;white-space:nowrap}
-
-/* ══════════════════════════════
-   MENU — FULL RESTAURANT STYLE
-══════════════════════════════ */
 .menu-outer{background:var(--dark2);border-radius:0 0 16px 16px;margin-bottom:52px;overflow:hidden}
 .menu-header-bar{background:#0A0600;border-bottom:1px solid rgba(212,168,75,.15);padding:28px 40px;text-align:center}
 .menu-restaurant-name{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#D4A84B;letter-spacing:.06em;margin-bottom:4px}
-.menu-restaurant-sub{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:rgba(212,168,75,.4);font-family:'Jost',sans-serif}
+.menu-restaurant-sub{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:rgba(212,168,75,.4)}
 .menu-ornament{font-size:18px;color:rgba(212,168,75,.3);margin:12px 0 0}
 .menu-inner{padding:32px 40px}
-.menu-section-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#D4A84B;text-align:center;letter-spacing:.08em;margin:32px 0 6px;position:relative}
-.menu-section-title::before,.menu-section-title::after{content:'——';color:rgba(212,168,75,.3);margin:0 10px;font-family:serif}
+.menu-section-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#D4A84B;text-align:center;letter-spacing:.08em;margin:32px 0 6px}
+.menu-section-title::before,.menu-section-title::after{content:'——';color:rgba(212,168,75,.3);margin:0 10px}
 .menu-section-line{width:60px;height:1px;background:rgba(212,168,75,.2);margin:0 auto 20px}
-/* Desayuno, Almuerzo, Postres — simple pills */
 .mp-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
-.mp{border-radius:24px;padding:10px 18px;font-size:15px;font-weight:500;cursor:default;transition:transform .15s}
+.mp{border-radius:24px;padding:10px 18px;font-size:15px;font-weight:500;transition:transform .15s}
 .mp:hover{transform:scale(1.04)}
 .mp.f{background:#1E1200;border:1px solid rgba(196,154,80,.25);color:#EDD98A}
 .mp.d{background:#080F1A;border:1px solid rgba(100,160,220,.25);color:#A8CCEE}
-/* Cena — full menu item style */
 .menu-items-grid{display:flex;flex-direction:column;gap:0}
 .menu-item{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid rgba(212,168,75,.08)}
 .menu-item:last-child{border-bottom:none}
@@ -172,21 +106,18 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
 .menu-item-body{flex:1}
 .menu-item-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#EDD98A;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between}
 .menu-item-desc{font-size:13px;color:rgba(212,168,75,.5);line-height:1.6;font-style:italic}
-.menu-item-price{font-family:'Playfair Display',serif;font-size:16px;color:rgba(212,168,75,.4);font-style:italic;flex-shrink:0}
-/* Secret menu */
+.menu-item-price{font-family:'Playfair Display',serif;font-size:14px;color:rgba(212,168,75,.4);font-style:italic;flex-shrink:0;margin-left:12px}
 .secret-section{margin-top:32px;border:1px solid rgba(212,168,75,.2);border-radius:12px;padding:24px;text-align:center;background:rgba(212,168,75,.03)}
-.secret-title{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:rgba(212,168,75,.5);margin-bottom:6px;letter-spacing:.06em}
+.secret-title{font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:rgba(212,168,75,.5);margin-bottom:6px}
 .secret-lock{font-size:28px;margin-bottom:10px;display:block}
 .secret-item{display:inline-block;font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#D4A84B;letter-spacing:.08em;padding:10px 32px;border:1px solid rgba(212,168,75,.3);border-radius:8px}
 .secret-sub{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,168,75,.3);margin-top:10px}
-
 .footer{display:flex;align-items:stretch;min-height:320px;border-top:1px solid var(--border);margin-top:80px;width:100%}
 .footer-img{width:42%;flex-shrink:0;overflow:hidden}
 .footer-img img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
 .footer-text{flex:1;background:#120A02;display:flex;flex-direction:column;justify-content:center;padding:48px 44px}
 .footer-main{font-family:'Cormorant Garamond',serif;font-size:34px;font-style:italic;font-weight:700;color:#D4A84B;margin-bottom:14px;line-height:1.3}
 .footer-sub{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:rgba(212,168,75,.28);line-height:2.2}
-
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 @keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
@@ -194,14 +125,12 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
 </style>
 </head>
 <body>
-
 <div class="topbar">
   <div class="topbar-title">La Aventura de Marco y Lissette en Miami</div>
   <div class="topbar-hint">✨ Todos los lugares tienen enlace — haz clic para explorarlos</div>
 </div>
-
 <div class="cover">
-  <div class="cover-img"><img src="${P.cover}" alt="Marco y Lissette"></div>
+  <div class="cover-img"><img src="https://marcor14015.github.io/our-trip/IMG_7634.JPG" alt="Marco y Lissette"></div>
   <div class="cover-text">
     <span class="cover-eye">Una aventura hecha con amor</span>
     <h1 class="cover-title">La Aventura de<br><em>Marco y Lissette</em><br>en Miami</h1>
@@ -215,13 +144,10 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
     <div class="cover-hint">✨ Todos los lugares tienen enlace — haz clic en cualquiera para explorarlos</div>
   </div>
 </div>
-
 <div class="page">
-
-<!-- CALENDAR -->
 <div class="reveal">
 <div class="sec-header schedule">
-  <div class="sec-header-img"><img src="${P.itinerario}" alt="Itinerario"></div>
+  <div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/489ec801-76a9-4c1e-b433-b2d1f04597f9.jpg" alt="Itinerario"></div>
   <div class="sec-header-text"><span class="sec-badge badge-sch">Mayo 2026</span><div class="sec-name">Itinerario</div><div class="sec-sub">Del 12 al 23 de mayo — 10 días juntos</div></div>
 </div>
 <div class="cal-wrap">
@@ -251,11 +177,9 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   </div>
 </div>
 </div>
-
-<!-- SCHEDULE -->
 <div class="reveal">
 <div class="sec-header schedule">
-  <div class="sec-header-img"><img src="${P.horario}" alt="Horario de Hubby"></div>
+  <div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/c8581fb9-d3b7-4104-94c0-1b2a8845579c.jpg" alt="Horario de Hubby"></div>
   <div class="sec-header-text"><span class="sec-badge badge-sch">Horario Diario</span><div class="sec-name">Horario de Hubby</div><div class="sec-sub">Días de tarde libre — 12, 13, 14, 18, 19, 20, 21</div></div>
 </div>
 <div class="sch-body">
@@ -270,20 +194,14 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   </div>
 </div>
 </div>
-
-<div class="banner full reveal">
-  <div class="banner-icon">⭐</div>
-  <div class="banner-txt"><span class="banner-eye">Días 15, 16, 17 y 22 de mayo</span><div class="banner-title">Aventuras de Día Completo</div><div class="banner-sub">Sin horario fijo — tú eliges el día, nosotros ponemos el ambiente</div></div>
-</div>
-
-<!-- MIAMI BEACH -->
+<div class="banner full reveal"><div class="banner-icon">⭐</div><div class="banner-txt"><span class="banner-eye">Días 15, 16, 17 y 22 de mayo</span><div class="banner-title">Aventuras de Día Completo</div><div class="banner-sub">Sin horario fijo — tú eliges el día, nosotros ponemos el ambiente</div></div></div>
 <div class="reveal">
-<div class="sec-header fullday"><div class="sec-header-img"><img src="${P.miami}" alt="Miami Beach"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">Miami Beach</div><div class="sec-sub">Playas · Explorar · Experiencias · Comer</div></div></div>
+<div class="sec-header fullday"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/c49c48c1-671c-4563-bb1a-d39c0665f745.jpg" alt="Miami Beach"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">Miami Beach</div><div class="sec-sub">Playas · Explorar · Experiencias · Comer</div></div></div>
 <div class="dest-body">
   <div class="cat-lbl">Playas y Parques</div><div class="pg">
     <a class="pc" href="https://www.google.com/search?q=Miami+Beach+Florida" target="_blank"><img class="shimmer" data-search="Miami Beach white sand tropical water" alt="La Playa"><div class="pc-name">La Playa <span class="li">↗</span></div></a>
     <a class="pc" href="https://www.google.com/search?q=South+Pointe+Park+Miami+Beach" target="_blank"><img class="shimmer" data-search="South Pointe Park Miami pier" alt="South Pointe Park"><div class="pc-name">South Pointe Park <span class="li">↗</span></div></a>
-    <a class="pc" href="https://www.google.com/search?q=Haulover+Beach+Miami" target="_blank"><img class="shimmer" data-search="Haulover Beach Miami coast" alt="Haulover Beach"><div class="pc-name">Haulover Beach <span class="li">↗</span></div></a>
+    <a class="pc" href="https://www.google.com/search?q=Haulover+Beach+Miami" target="_blank"><img class="shimmer" data-search="Haulover Beach Miami coast aerial" alt="Haulover Beach"><div class="pc-name">Haulover Beach <span class="li">↗</span></div></a>
     <a class="pc" href="https://www.google.com/search?q=Bayfront+Park+Miami" target="_blank"><img class="shimmer" data-search="Bayfront Park Miami waterfront" alt="Bayfront Park"><div class="pc-name">Bayfront Park <span class="li">↗</span></div></a>
   </div>
   <div class="cat-lbl">Pasear y Explorar</div><div class="pg">
@@ -305,10 +223,8 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   </div>
 </div>
 </div>
-
-<!-- WYNWOOD -->
 <div class="reveal">
-<div class="sec-header fullday"><div class="sec-header-img"><img src="${P.wynwood}" alt="Wynwood"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">Wynwood</div><div class="sec-sub">Arte · Cultura · Jugar · Comer</div></div></div>
+<div class="sec-header fullday"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/c8581fb9-d3b7-4104-94c0-1b2a8845579c.jpg" alt="Wynwood"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">Wynwood</div><div class="sec-sub">Arte · Cultura · Jugar · Comer</div></div></div>
 <div class="dest-body">
   <div class="cat-lbl">Arte y Cultura</div><div class="pg">
     <a class="pc" href="https://www.google.com/search?q=Wynwood+Walls+Miami" target="_blank"><img class="shimmer" data-search="Wynwood Walls Miami street art colorful" alt="Wynwood Walls"><div class="pc-name">Wynwood Walls <span class="li">↗</span></div></a>
@@ -329,10 +245,8 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   </div>
 </div>
 </div>
-
-<!-- LITTLE HAVANA -->
 <div class="reveal">
-<div class="sec-header fullday"><div class="sec-header-img"><img src="${P.littlehavana}" alt="La Pequeña Habana"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">La Pequeña Habana</div><div class="sec-sub">Calle Ocho · Música · Cultura Cubana</div></div></div>
+<div class="sec-header fullday"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/d3e9b374-760d-4ce8-9c9d-281ead4577d2.jpg" alt="La Pequeña Habana"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">La Pequeña Habana</div><div class="sec-sub">Calle Ocho · Música · Cultura Cubana</div></div></div>
 <div class="dest-body">
   <div class="cat-lbl">Pasear y Descubrir</div><div class="pg">
     <a class="pc" href="https://www.google.com/search?q=Calle+Ocho+Little+Havana+Miami" target="_blank"><img class="shimmer" data-search="Calle Ocho Little Havana Miami street" alt="Calle Ocho"><div class="pc-name">Caminata por Calle Ocho <span class="li">↗</span></div></a>
@@ -346,10 +260,8 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   </div>
 </div>
 </div>
-
-<!-- COCONUT GROVE -->
 <div class="reveal">
-<div class="sec-header fullday"><div class="sec-header-img"><img src="${P.coconut}" alt="Coconut Grove"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">Coconut Grove</div><div class="sec-sub">Parques · Marina · Naturaleza · Comer</div></div></div>
+<div class="sec-header fullday"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/60a33e7d-ab86-4747-b8ae-6b90dfcf829f.jpg" alt="Coconut Grove"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">Coconut Grove</div><div class="sec-sub">Parques · Marina · Naturaleza · Comer</div></div></div>
 <div class="dest-body">
   <div class="cat-lbl">Parques y Naturaleza</div><div class="pg">
     <a class="pc" href="https://www.google.com/search?q=Matheson+Hammock+Park+Miami" target="_blank"><img class="shimmer" data-search="Matheson Hammock Park Miami lagoon" alt="Matheson"><div class="pc-name">Matheson Hammock Park <span class="li">↗</span></div></a>
@@ -367,10 +279,8 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   </div>
 </div>
 </div>
-
-<!-- EVERGLADES - new photo, no repeat -->
 <div class="reveal">
-<div class="sec-header fullday"><div class="sec-header-img"><img src="${P.everglades}" alt="Homestead y Los Everglades"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">Homestead y Los Everglades</div><div class="sec-sub">Naturaleza · Vida Silvestre · Atracciones</div></div></div>
+<div class="sec-header fullday"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/IMG_0717.JPG" alt="Homestead y Los Everglades"></div><div class="sec-header-text"><span class="sec-badge badge-full">Día Completo ⭐</span><div class="sec-name">Homestead y Los Everglades</div><div class="sec-sub">Naturaleza · Vida Silvestre · Atracciones</div></div></div>
 <div class="dest-body">
   <div class="cat-lbl">Naturaleza y Vida Silvestre</div><div class="pg">
     <a class="pc" href="https://www.google.com/search?q=Everglades+National+Park+Florida" target="_blank"><img class="shimmer" data-search="Everglades National Park swamp Florida" alt="Everglades"><div class="pc-name">Parque Nacional Everglades <span class="li">↗</span></div></a>
@@ -386,17 +296,10 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   </div>
 </div>
 </div>
-
 <div class="divider reveal"><span>✦</span></div>
-
-<div class="banner aft reveal">
-  <div class="banner-icon">🌅</div>
-  <div class="banner-txt"><span class="banner-eye">Días 12, 13, 14, 18, 19, 20 y 21 de mayo</span><div class="banner-title">Planes de Tarde</div><div class="banner-sub">Escoge lo que se te antoje — aquí no hay reglas</div></div>
-</div>
-
-<!-- DEPORTES -->
+<div class="banner aft reveal"><div class="banner-icon">🌅</div><div class="banner-txt"><span class="banner-eye">Días 12, 13, 14, 18, 19, 20 y 21 de mayo</span><div class="banner-title">Planes de Tarde</div><div class="banner-sub">Escoge lo que se te antoje — aquí no hay reglas</div></div></div>
 <div class="reveal">
-<div class="sec-header afternoon"><div class="sec-header-img"><img src="${P.tarde}" alt="Deportes y Juegos"></div><div class="sec-header-text"><span class="sec-badge badge-aft">Planes de Tarde 🌅</span><div class="sec-name">Deportes y Juegos</div><div class="sec-sub">Topgolf · Boliche · Mini Golf · Dave & Buster's</div></div></div>
+<div class="sec-header afternoon"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/IMG_1358.JPG" alt="Deportes y Juegos"></div><div class="sec-header-text"><span class="sec-badge badge-aft">Planes de Tarde 🌅</span><div class="sec-name">Deportes y Juegos</div><div class="sec-sub">Topgolf · Boliche · Mini Golf · Dave & Buster's</div></div></div>
 <div class="dest-body"><div class="aft-grid">
   <a class="ac" href="https://www.google.com/search?q=Topgolf+Miami" target="_blank"><img class="shimmer" data-search="Topgolf driving range night fun golf" alt="Topgolf"><div class="ac-body"><span class="ac-cat">Deportes y Juegos</span><div class="ac-name">Topgolf <span class="li">↗</span></div></div></a>
   <a class="ac" href="https://www.google.com/search?q=bowling+arcade+Miami" target="_blank"><img class="shimmer" data-search="bowling alley neon pins fun" alt="Boliche"><div class="ac-body"><span class="ac-cat">Deportes y Juegos</span><div class="ac-name">Boliche + Arcade <span class="li">↗</span></div></div></a>
@@ -404,10 +307,8 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   <a class="ac" href="https://www.google.com/search?q=Dave+and+Busters+Miami" target="_blank"><img class="shimmer" data-search="Dave Busters arcade entertainment bar" alt="Dave Busters"><div class="ac-body"><span class="ac-cat">Deportes y Juegos</span><div class="ac-name">Dave &amp; Buster's <span class="li">↗</span></div></div></a>
 </div></div>
 </div>
-
-<!-- ADRENALINA -->
 <div class="reveal">
-<div class="sec-header afternoon"><div class="sec-header-img"><img src="${P.adrenalina}" alt="Adrenalina"></div><div class="sec-header-text"><span class="sec-badge badge-aft">Planes de Tarde 🌅</span><div class="sec-name">Adrenalina</div><div class="sec-sub">Hachas · ATV · Escape Room · Rage Room</div></div></div>
+<div class="sec-header afternoon"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/IMG_0691.JPG" alt="Adrenalina"></div><div class="sec-header-text"><span class="sec-badge badge-aft">Planes de Tarde 🌅</span><div class="sec-name">Adrenalina</div><div class="sec-sub">Hachas · ATV · Escape Room · Rage Room</div></div></div>
 <div class="dest-body"><div class="aft-grid">
   <a class="ac" href="https://www.google.com/search?q=axe+throwing+Miami" target="_blank"><img class="shimmer" data-search="axe throwing target bullseye sport" alt="Hachas"><div class="ac-body"><span class="ac-cat">Adrenalina</span><div class="ac-name">Lanzamiento de Hachas <span class="li">↗</span></div></div></a>
   <a class="ac" href="https://www.google.com/search?q=ATV+rental+Miami+Homestead" target="_blank"><img class="shimmer" data-search="ATV quad bike off road adventure" alt="ATV"><div class="ac-body"><span class="ac-cat">Adrenalina</span><div class="ac-name">Renta de ATV <span class="li">↗</span></div></div></a>
@@ -415,10 +316,8 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   <a class="ac" href="https://www.google.com/search?q=Smashit+House+rage+room+Fort+Lauderdale" target="_blank"><img class="shimmer" data-search="rage room smash break fun stress" alt="Rage Room"><div class="ac-body"><span class="ac-cat">Adrenalina</span><div class="ac-name">The Smashit House <span class="li">↗</span></div></div></a>
 </div></div>
 </div>
-
-<!-- RELAJARSE -->
 <div class="reveal">
-<div class="sec-header afternoon"><div class="sec-header-img"><img src="${P.relajarse}" alt="Relajarse y Explorar"></div><div class="sec-header-text"><span class="sec-badge badge-aft">Planes de Tarde 🌅</span><div class="sec-name">Relajarse y Explorar</div><div class="sec-sub">Picnic · Patinaje · Hollywood Beach · El Cine</div></div></div>
+<div class="sec-header afternoon"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/IMG_0651.JPG" alt="Relajarse y Explorar"></div><div class="sec-header-text"><span class="sec-badge badge-aft">Planes de Tarde 🌅</span><div class="sec-name">Relajarse y Explorar</div><div class="sec-sub">Picnic · Patinaje · Hollywood Beach · El Cine</div></div></div>
 <div class="dest-body"><div class="aft-grid">
   <a class="ac" href="https://www.google.com/search?q=picnic+parks+Miami" target="_blank"><img class="shimmer" data-search="picnic couple park blanket sunny" alt="Picnic"><div class="ac-body"><span class="ac-cat">Relajarse</span><div class="ac-name">Picnic en el Parque <span class="li">↗</span></div></div></a>
   <a class="ac" href="https://www.google.com/search?q=ice+skating+Miami" target="_blank"><img class="shimmer" data-search="ice skating rink couple romantic fun" alt="Patinaje"><div class="ac-body"><span class="ac-cat">Relajarse</span><div class="ac-name">Patinaje sobre Hielo <span class="li">↗</span></div></div></a>
@@ -427,10 +326,8 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   <a class="ac" href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zIg3L7eML64yYLRSNaiwsEixTDVPMjeyMEg0Sku1tDKoMLFINja1MDI3N0hOTbVMSfESzsjPz65USM0rSS0qSczMywWyADUrF1g&q=hooky+entertainment&sourceid=chrome&ie=UTF-8" target="_blank"><img class="shimmer" data-search="movie cinema theater seats screen night" alt="Cine"><div class="ac-body"><span class="ac-cat">Relajarse</span><div class="ac-name">El Cine — Hooky Entertainment <span class="li">↗</span></div></div></a>
 </div></div>
 </div>
-
-<!-- COMPRAS -->
 <div class="reveal">
-<div class="sec-header afternoon"><div class="sec-header-img"><img src="${P.compras}" alt="Compras"></div><div class="sec-header-text"><span class="sec-badge badge-aft">Planes de Tarde 🌅</span><div class="sec-name">Compras</div><div class="sec-sub">Dolphin Mall · Dadeland · Aventura · Sawgrass · The Falls</div></div></div>
+<div class="sec-header afternoon"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/IMG_1007.JPG" alt="Compras"></div><div class="sec-header-text"><span class="sec-badge badge-aft">Planes de Tarde 🌅</span><div class="sec-name">Compras</div><div class="sec-sub">Dolphin Mall · Dadeland · Aventura · Sawgrass · The Falls</div></div></div>
 <div class="dest-body"><div class="aft-grid">
   <a class="ac" href="https://www.google.com/search?q=Dolphin+Mall+Sweetwater+Miami" target="_blank"><img class="shimmer" data-search="Dolphin Mall Miami shopping outlet" alt="Dolphin Mall"><div class="ac-body"><span class="ac-cat">Compras</span><div class="ac-name">Dolphin Mall <span class="li">↗</span></div></div></a>
   <a class="ac" href="https://www.google.com/search?q=Dadeland+Mall+Miami" target="_blank"><img class="shimmer" data-search="Dadeland Mall Miami shopping modern" alt="Dadeland"><div class="ac-body"><span class="ac-cat">Compras</span><div class="ac-name">Dadeland Mall <span class="li">↗</span></div></div></a>
@@ -439,12 +336,9 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   <a class="ac" href="https://www.google.com/search?q=The+Falls+Mall+Miami" target="_blank"><img class="shimmer" data-search="The Falls outdoor mall waterfall Miami" alt="The Falls"><div class="ac-body"><span class="ac-cat">Compras</span><div class="ac-name">The Falls <span class="li">↗</span></div></div></a>
 </div></div>
 </div>
-
 <div class="divider reveal"><span>✦</span></div>
-
-<!-- RESTAURANTES -->
 <div class="reveal">
-<div class="sec-header restaurant"><div class="sec-header-img"><img src="${P.restaurantes}" alt="Restaurantes"></div><div class="sec-header-text"><span class="sec-badge badge-rest">Para Probar 🍽️</span><div class="sec-name">Restaurantes para Probar</div><div class="sec-sub">Selección especial cerca de casa y en Miami</div></div></div>
+<div class="sec-header restaurant"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/c8581fb9-d3b7-4104-94c0-1b2a8845579c.jpg" alt="Restaurantes"></div><div class="sec-header-text"><span class="sec-badge badge-rest">Para Probar 🍽️</span><div class="sec-name">Restaurantes para Probar</div><div class="sec-sub">Selección especial cerca de casa y en Miami</div></div></div>
 <div class="dest-body"><div class="pg">
   <a class="pc" href="https://www.google.com/search?q=marakas+pizza+bird+road" target="_blank"><img class="shimmer" data-search="pizza restaurant Italian pie cheese" alt="Marakas Pizza"><div class="pc-name">Marakas Pizza <span class="li">↗</span></div></a>
   <a class="pc" href="https://www.google.com/search?q=mama+mia+homestead" target="_blank"><img class="shimmer" data-search="Italian pizza restaurant cozy dining" alt="Mamma Mia"><div class="pc-name">Mamma Mia Pizzeria 2 <span class="li">↗</span></div></a>
@@ -457,12 +351,9 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
   <a class="pc" href="https://www.google.com/search?q=el+palacio+de+los+jugos+kendall" target="_blank"><img class="shimmer" data-search="Cuban juice bar tropical fruit Miami" alt="El Palacio"><div class="pc-name">El Palacio de los Jugos <span class="li">↗</span></div></a>
 </div></div>
 </div>
-
 <div class="divider reveal"><span>✦</span></div>
-
-<!-- MENU - FULL RESTAURANT STYLE -->
 <div class="reveal">
-<div class="sec-header menu-sec"><div class="sec-header-img"><img src="${P.menu}" alt="El Menú de Hubby"></div><div class="sec-header-text"><span class="sec-badge badge-menu">Cocinado en Casa 🍴</span><div class="sec-name">El Menú de Hubby</div><div class="sec-sub">Todo fresquito y hecho con amor — tú decides</div></div></div>
+<div class="sec-header menu-sec"><div class="sec-header-img"><img src="https://marcor14015.github.io/our-trip/ee3570fc-70d6-49a3-ab10-981d521ba4ca.jpg" alt="El Menú de Hubby"></div><div class="sec-header-text"><span class="sec-badge badge-menu">Cocinado en Casa 🍴</span><div class="sec-name">El Menú de Hubby</div><div class="sec-sub">Todo fresquito y hecho con amor — tú decides</div></div></div>
 <div class="menu-outer">
   <div class="menu-header-bar">
     <div class="menu-restaurant-name">El Menú de Hubby</div>
@@ -470,98 +361,68 @@ body{background:var(--bg);font-family:'Jost',sans-serif;color:var(--text);font-w
     <div class="menu-ornament">✦ ✦ ✦</div>
   </div>
   <div class="menu-inner">
-
     <div class="menu-section-title">Desayuno</div>
     <div class="menu-section-line"></div>
     <div class="mp-row">
-      <span class="mp f">🍳 Huevos Fritos</span>
-      <span class="mp f">🥚 Huevos Revueltos</span>
-      <span class="mp f">🥓 Sándwich de Tocino, Huevo y Queso</span>
-      <span class="mp f">🫙 Mangú</span>
+      <span class="mp f">🍳 Huevos Fritos</span><span class="mp f">🥚 Huevos Revueltos</span>
+      <span class="mp f">🥓 Sándwich de Tocino, Huevo y Queso</span><span class="mp f">🫙 Mangú</span>
     </div>
-
     <div class="menu-section-title">Almuerzo &amp; Meriendas</div>
     <div class="menu-section-line"></div>
     <div class="mp-row">
-      <span class="mp f">🥪 Sándwich Gourmet de Jamón y Queso</span>
-      <span class="mp f">🍓 Frutas Frescas</span>
+      <span class="mp f">🥪 Sándwich Gourmet de Jamón y Queso</span><span class="mp f">🍓 Frutas Frescas</span>
     </div>
-
     <div class="menu-section-title">Cena</div>
     <div class="menu-section-line"></div>
     <div class="menu-items-grid">
-      <div class="menu-item"><div class="menu-item-emoji">🌮</div><div class="menu-item-body"><div class="menu-item-name">Tacos o Quesadillas <span class="menu-item-price">de tu elección</span></div><div class="menu-item-desc">Birria desmechada, bistec jugoso o pollo al sazón — tortillas hechas a la orden con queso fundido y tus toppings favoritos</div></div></div>
+      <div class="menu-item"><div class="menu-item-emoji">🌮</div><div class="menu-item-body"><div class="menu-item-name">Tacos o Quesadillas <span class="menu-item-price">de tu elección</span></div><div class="menu-item-desc">Birria desmechada, bistec jugoso o pollo al sazón — tortillas hechas a la orden con queso fundido</div></div></div>
       <div class="menu-item"><div class="menu-item-emoji">🍲</div><div class="menu-item-body"><div class="menu-item-name">Ajiaco o Sancocho <span class="menu-item-price">sopas del alma</span></div><div class="menu-item-desc">Sopa reconfortante con papas, maíz y proteína de tu preferencia — el plato que te abraza por dentro</div></div></div>
       <div class="menu-item"><div class="menu-item-emoji">🥩</div><div class="menu-item-body"><div class="menu-item-name">Congri con Bistec y Chimichurri <span class="menu-item-price">clásico de la casa</span></div><div class="menu-item-desc">Arroz negro con frijoles, bistec a la plancha bañado en chimichurri casero de hierbas frescas</div></div></div>
-      <div class="menu-item"><div class="menu-item-emoji">🍝</div><div class="menu-item-body"><div class="menu-item-name">Carbonara (versión proteína) <span class="menu-item-price">pasta italiana</span></div><div class="menu-item-desc">Pasta al dente con salsa cremosa de huevo y queso parmesano, con pollo o tocino crujiente</div></div></div>
-      <div class="menu-item"><div class="menu-item-emoji">🍝</div><div class="menu-item-body"><div class="menu-item-name">Amatriciana (versión proteína) <span class="menu-item-price">pasta italiana</span></div><div class="menu-item-desc">Salsa de tomate rústica con guanciale o tocino, parmesano y un toque de picante</div></div></div>
+      <div class="menu-item"><div class="menu-item-emoji">🍝</div><div class="menu-item-body"><div class="menu-item-name">Carbonara <span class="menu-item-price">versión proteína</span></div><div class="menu-item-desc">Pasta al dente con salsa cremosa de huevo y queso parmesano, con pollo o tocino crujiente</div></div></div>
+      <div class="menu-item"><div class="menu-item-emoji">🍝</div><div class="menu-item-body"><div class="menu-item-name">Amatriciana <span class="menu-item-price">versión proteína</span></div><div class="menu-item-desc">Salsa de tomate rústica con guanciale o tocino, parmesano y un toque de picante</div></div></div>
       <div class="menu-item"><div class="menu-item-emoji">🫚</div><div class="menu-item-body"><div class="menu-item-name">Mofongo <span class="menu-item-price">con tu proteína favorita</span></div><div class="menu-item-desc">Plátano verde majado con ajo y aceite de oliva, relleno con camarones, pollo o carne al gusto</div></div></div>
       <div class="menu-item"><div class="menu-item-emoji">🌊</div><div class="menu-item-body"><div class="menu-item-name">Aguachile <span class="menu-item-price">fresco y picante</span></div><div class="menu-item-desc">Camarones frescos marinados en limón, chile serrano, cilantro y cebolla morada — servido frío</div></div></div>
       <div class="menu-item"><div class="menu-item-emoji">🦐</div><div class="menu-item-body"><div class="menu-item-name">Camarones al Ajillo <span class="menu-item-price">mar y mantequilla</span></div><div class="menu-item-desc">Camarones salteados en mantequilla con ajo dorado, vino blanco y un toque de limón fresco</div></div></div>
       <div class="menu-item"><div class="menu-item-emoji">🍤</div><div class="menu-item-body"><div class="menu-item-name">Pasta de Camarones <span class="menu-item-price">mar y pasta</span></div><div class="menu-item-desc">Pasta cremosa con camarones jugosos, ajo, tomate cherry y parmesano — suave y reconfortante</div></div></div>
       <div class="menu-item"><div class="menu-item-emoji">🥗</div><div class="menu-item-body"><div class="menu-item-name">Ensalada Griega con Proteína <span class="menu-item-price">ligero y fresco</span></div><div class="menu-item-desc">Pepino, tomate, aceitunas, feta y cebolla morada con aderezo de limón — con bistec o pollo al ajillo</div></div></div>
     </div>
-
     <div class="menu-section-title">Postres</div>
     <div class="menu-section-line"></div>
     <div class="mp-row">
-      <span class="mp f">🥧 Pay de Lima</span>
-      <span class="mp f">🍪 Pay de Cookies and Cream</span>
-      <span class="mp f">🍰 Cheesecake</span>
-      <span class="mp f">🍦 Big Boy Ice Cream Bars</span>
-      <span class="mp f">🍪 Galletas</span>
+      <span class="mp f">🥧 Pay de Lima</span><span class="mp f">🍪 Pay de Cookies and Cream</span>
+      <span class="mp f">🍰 Cheesecake</span><span class="mp f">🍦 Big Boy Ice Cream Bars</span><span class="mp f">🍪 Galletas</span>
     </div>
-
     <div class="menu-section-title">Bebidas</div>
     <div class="menu-section-line"></div>
     <div class="mp-row">
-      <span class="mp d">🥂 Mimosas</span>
-      <span class="mp d">🍹 Margarita</span>
-      <span class="mp d">🌿 Mojito</span>
-      <span class="mp d">🥃 Shots de Tequila</span>
-      <span class="mp d">🍶 Soju</span>
-      <span class="mp d">🍷 Vino Dulce</span>
+      <span class="mp d">🥂 Mimosas</span><span class="mp d">🍹 Margarita</span><span class="mp d">🌿 Mojito</span>
+      <span class="mp d">🥃 Shots de Tequila</span><span class="mp d">🍶 Soju</span><span class="mp d">🍷 Vino Dulce</span>
       <span class="mp d">🍺 Presidente</span>
     </div>
-
     <div class="secret-section">
       <span class="secret-lock">🔒</span>
       <div class="secret-title">Ítem Secreto del Menú</div>
       <div class="secret-item">Hubby</div>
       <div class="secret-sub">Disponible por tiempo limitado · Solo para ella</div>
     </div>
-
   </div>
 </div>
 </div>
-
 </div>
-
 <div class="footer">
-  <div class="footer-img"><img src="${P.footer}" alt="Marco y Lissette"></div>
+  <div class="footer-img"><img src="https://marcor14015.github.io/our-trip/2e13c23f-e675-46c6-925d-c8d189e1a873.jpg" alt="Marco y Lissette"></div>
   <div class="footer-text">
     <div class="footer-main">Hecho con amor para ti, Lissette 🌿</div>
     <div class="footer-sub">Sin horario fijo<br>Sin presión<br>Tú decides, nosotros vamos</div>
   </div>
 </div>
-
 <script>
-const KEY='${KEY}';const cache={};
+const KEY='SMPWSqQcRBF9zsoS1YdG71gEJyvddL6nWc7sAiMtU7HvyXf9KlCmXuGC';const cache={};
 async function px(q){if(cache[q]!==undefined)return cache[q];cache[q]=null;try{const r=await fetch('https://api.pexels.com/v1/search?query='+encodeURIComponent(q)+'&per_page=1&orientation=landscape',{headers:{Authorization:KEY}});const d=await r.json();const p=d?.photos?.[0];if(p)cache[q]=p.src.medium;}catch(e){}return cache[q];}
 async function loadImgs(){const imgs=Array.from(document.querySelectorAll('img[data-search]'));for(let i=0;i<imgs.length;i+=5){const batch=imgs.slice(i,i+5);await Promise.all(batch.map(async img=>{const src=await px(img.dataset.search);if(src){img.src=src;img.onload=()=>img.classList.remove('shimmer');img.onerror=()=>img.classList.remove('shimmer');}else img.classList.remove('shimmer');}));await new Promise(r=>setTimeout(r,250));}}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.05});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 loadImgs();
-<\/script>
-</body>
-</html>`;
-
-function dl(){
-  const blob=new Blob([html],{type:'text/html'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url;a.download='index.html';a.click();
-  URL.revokeObjectURL(url);
-  document.getElementById('status').textContent='✅ ¡Descargado! Sube el index.html a GitHub y listo.';
-}
 </script>
+</body>
+</html>
